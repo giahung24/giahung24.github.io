@@ -31,7 +31,7 @@
 
 <body>
     <!-- Page Preloder -->
-    <div id="preloder">
+    <div id="preloader">
         <div class="loader"></div>
     </div>
 
@@ -44,12 +44,9 @@
         <div class="canvas-close">
             <i class="icon_close"></i>
         </div>
-        <div class="search-icon  search-switch">
-            <i class="icon_search"></i>
-        </div>
         <div class="header-configure-area">
             <div class="language-option">
-                <img src="../img/flag-en.jpg" alt="">
+                <!-- <img src="../img/flag-en.jpg" alt=""> -->
                 <span class="current-lang">EN <i class="fa fa-angle-down"></i></span>
                 <div class="flag-dropdown">
                     <ul>
@@ -58,64 +55,27 @@
                     </ul>
                 </div>
             </div>
-            <a href="#" class="bk-btn">Booking Now</a>
+         
+            <a href="https://www.booking.com/hotel/fr/best-bordeaux-sud.fr.html" class="bk-btn">Book Now</a>
         </div>
-        <nav class="mainmenu mobile-menu">
-            <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
-                <li><a href="./rooms.html">Rooms</a></li>
-                <li><a href="./about-us.html">About Us</a></li>
-                <!-- <li><a href="./room-details.html">Pages</a>
-                    <ul class="dropdown">
-                        <li><a href="./room-details.html">Room Details</a></li>
-                        <li><a href="#">Deluxe Room</a></li>
-                        <li><a href="#">Family Room</a></li>
-                        <li><a href="#">Premium Room</a></li>
+        <div id="mobile-menu-wrap">
+            <div class="slicknav_menu"><a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed" style="outline: none;"><span class="slicknav_menutxt">MENU</span><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a>
+                <nav class="slicknav_nav slicknav_hidden" aria-hidden="true" role="menu" style="display: none;">
+                    <ul>
+                        <li class="active"><a href="#hero-section" role="menuitem">Home</a></li>
+                        <li><a href="#services" role="menuitem">Services & Rooms</a></li>
+                        <li><a href="#testimonials" role="menuitem">Testimonials</a></li>
+                        <li><a href="#events" role="menuitem">Events</a></li>
+                        <li><a href="#about-us" role="menuitem">About Us</a></li>
                     </ul>
-                </li> -->
-                <!-- <li><a href="./blog.html">News</a></li> -->
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <!-- <div id="mobile-menu-wrap"></div>
-        <div class="top-social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-tripadvisor"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
+                </nav>
+            </div>
         </div>
-        <ul class="top-widget">
-            <li><i class="fa fa-phone"></i> (12) 345 67890</li>
-            <li><i class="fa fa-envelope"></i> info.colorlib@gmail.com</li>
-        </ul> -->
     </div>
     <!-- Offcanvas Menu Section End -->
 
     <!-- Header Section Begin -->
-    <header class="header-section">
-        <!-- <div class="top-nav">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <ul class="tn-left">
-                            <li><i class="fa fa-phone"></i> (12) 345 67890</li>
-                            <li><i class="fa fa-envelope"></i> info.colorlib@gmail.com</li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="tn-right">
-                            <div class="top-social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-tripadvisor"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+    <header class="header-section" id="hero-section">
         <div class="menu-item">
             <div class="container">
                 <div class="row">
@@ -130,22 +90,14 @@
                         <div class="nav-menu">
                             <nav class="mainmenu">
                                 <ul>
-                                    <li class="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="./rooms.html">Rooms</a></li>
-                                    <li><a href="./about-us.html">About Us</a></li>
-                                    <li><a href="./room-details.html">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="./room-details.html">Room Details</a></li>
-                                            <li><a href="./blog-details.html">Blog Details</a></li>
-                                            <li><a href="#">Family Room</a></li>
-                                            <li><a href="#">Premium Room</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="./blog.html">News</a></li>
-                                    <li><a href="./contact.html">Contact</a></li>
+                                    <li class="active"><a href="#hero-section">Home</a></li>
+                                    <li><a href="#services">Services & Rooms</a></li>
+                                    <li><a href="#testimonials">Testimonials</a></li>
+                                    <li><a href="#events">Events</a></li>
+                                    <li><a href="#about-us">About Us</a></li>
                                 </ul>
                             </nav>
-                            <a href="#" class="bk-btn">Book Now</a>
+                            <a href="https://www.booking.com/hotel/fr/best-bordeaux-sud.fr.html" class="bk-btn">Book Now</a>
                             <div class="language-option">
                                 <!-- <img src="../img/flag-en.jpg" alt=""> -->
                                 <span class="current-lang">EN <i class="fa fa-angle-down"></i></span>
@@ -173,7 +125,7 @@
                     <div class="hero-text">
                         <h1>Best Hotel <br/>Bordeaux Sud</h1>
                         <p>Exceptional service at the best price, 8km from Bordeaux.</p>
-                        <a href="#" class="primary-btn">Discover Now</a>
+                        <a href="#services" class="primary-btn">Discover Now</a>
                     </div>
                 </div>
                 <!-- <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
@@ -216,43 +168,8 @@
         </div>
     </section>
     <!-- Hero Section End -->
-
-    <!-- About Us Section Begin -->
-    <section class="aboutus-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="about-text">
-                        <div class="section-title">
-                            <span>About Us</span>
-                            <!-- <h2>Best Hotel </h2> <h4>Bordeaux Sud</h4> -->
-                            <br/>
-                            <img src="../img/logo/logo-3d.png" alt="">
-                        </div>
-                        <p class="f-para">Located in Villenave-d'Ornon, just 8km from Bordeaux, <span style="font-style: italic;">Best Hotel Bordeaux Sud</span> offers a comfortable 2-star stay with a garden and terrace. Our establishment provides a 24-hour reception, free Wi-Fi and an airport shuttle service for your convenience.</p>
-                        <p class="s-para">Enjoy air-conditioned rooms equipped with Canal+ and modern amenities. Start your day with our highly-rated buffet breakfast before exploring the beautiful Bordeaux region. Couples particularly love our location, rated 8.6 for a two-person stay.</p>
-                        <a href="about-us.html"  class="primary-btn about-btn">Read More</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-pic">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <img src="../img/about/about-pic-2.png" alt="">
-                            </div>
-                            <div class="col-sm-6">
-                                <img src="../img/about/about-pic-1.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- About Us Section End -->
-
     <!-- Services Section End -->
-    <section class="services-section spad">
+    <section class="services-section spad" id="services">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -311,7 +228,7 @@
     <!-- Services Section End -->
 
     <!-- Home Room Section Begin -->
-    <section class="hp-room-section">
+    <section class="hp-room-section" id="rooms">
         <div class="container-fluid">
             <div class="hp-room-items">
                 <div class="row">
@@ -438,7 +355,7 @@
     <!-- Home Room Section End -->
 
     <!-- Testimonial Section Begin -->
-    <section class="testimonial-section spad">
+    <section class="testimonial-section spad" id="testimonials">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -480,7 +397,7 @@
                             <img src="../img/testimonial-logo.png" alt="">
                         </div>
                         <div class="ts-item">
-                            <p>A perfect hotel for a short stay! Staff are the highlight of this place! We had an amazing stay! For the modest price you pay, you get a neat and clean room, nice breakfast, quiet area, amazingly friendly staff. The hotel manager made sure our stay was perfect. They went out of their way to make us feel welcomed. We were provided everything we needed (iron, hairdryer). There is a spacious parking with several chargers for electric cars.</p>
+                            <p>A perfect hotel for a short stay! Staff are the highlight of this place! We had an amazing stay! For the modest price you pay, you get a neat and clean room, nice breakfast, quiet area, amazingly friendly staff. The hotel manager made sure our stay was perfect. [...]</p>
                             <div class="ti-author">
                                 <div class="rating">
                                     <i class="icon_star"></i>
@@ -501,7 +418,7 @@
     <!-- Testimonial Section End -->
 
     <!-- Blog Section Begin -->
-    <section class="blog-section spad">
+    <section class="blog-section spad" id="events">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -561,7 +478,40 @@
         </div>
     </section>
     <!-- Blog Section End -->
-
+    
+    <!-- About Us Section Begin -->
+    <section class="aboutus-section spad" id="about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-text">
+                        <div class="section-title">
+                            <span>About Us</span>
+                            <!-- <h2>Best Hotel </h2> <h4>Bordeaux Sud</h4> -->
+                            <br/>
+                            <img src="../img/logo/logo-3d.png" alt="">
+                        </div>
+                        <p class="f-para">Located in Villenave-d'Ornon, just 8km from Bordeaux, <span style="font-style: italic;">Best Hotel Bordeaux Sud</span> offers a comfortable 2-star stay with a garden and terrace. Our establishment provides a 24-hour reception, free Wi-Fi and an airport shuttle service for your convenience.</p>
+                        <p class="s-para">Enjoy air-conditioned rooms equipped with Canal+ and modern amenities. Start your day with our highly-rated buffet breakfast before exploring the beautiful Bordeaux region.</p>
+                        <a href="about-us.html"  class="primary-btn about-btn">Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-pic">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img src="../img/about/about-pic-2.png" alt="">
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="../img/about/about-pic-1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section End -->
     <!-- Footer Section Begin -->
     <footer class="footer-section">
         <div class="container">
@@ -597,9 +547,15 @@
                         <div class="ft-contact">
                             <h6>Contact Us</h6>
                             <ul>
-                                <li>05 56 37 90 00</li>
-                                <li>contact@besthotel-bordeaux-sud.fr</li>
-                                <li>6 Rue Salvador Dali, 33140 Villenave-d'Ornon</li>
+                                <li><span><i aria-hidden="true" class="fa fa-phone"></i></span>
+                                    <span>05 56 37 90 00</span>
+                                </li>
+                                <li><span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                                    <span>contact@besthotel-bordeaux-sud.fr</span>
+                                </li>
+                                <li><span><i aria-hidden="true" class="fa fa-map-marker"></i></span> 
+                                    <span>6 Rue Salvador Dali, 33140 Villenave-d'Ornon</span>
+                                </li>
                             </ul>
                         </div>
                     </div>

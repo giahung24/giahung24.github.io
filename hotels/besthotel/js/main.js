@@ -16,7 +16,7 @@
     --------------------*/
     $(window).on('load', function () {
         $(".loader").fadeOut();
-        $("#preloder").delay(200).fadeOut("slow");
+        $("#preloader").delay(200).fadeOut("slow");
     });
 
     /*------------------
@@ -105,5 +105,19 @@
 		Nice Select
 	--------------------*/
     $("select").niceSelect();
+
+    /*------------------
+        Smooth Scroll
+    --------------------*/
+    $('.mainmenu ul li a[href*="#"]').on('click', function (e) {
+        e.preventDefault();
+        var id = $(this).attr('href');
+        var $target = $(id);
+        if ($target.length) {
+            $('html, body').animate({
+                scrollTop: $target.offset().top
+            }, 800);
+        }
+    });
 
 })(jQuery);

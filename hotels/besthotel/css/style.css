@@ -41,6 +41,7 @@ html, body {
 	font-family: "Cabin", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
+	scroll-behavior: smooth;
 }
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
@@ -146,9 +147,9 @@ ul, ol {
 	background: var(--brand-color);
 	content: "";
 }
-/* Preloder */
+/* Preloader */
 
-#preloder {
+#preloader {
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -268,6 +269,36 @@ ul, ol {
 /*---------------------
   Header
 -----------------------*/
+
+.header-section {
+	position: relative;
+	z-index: 97;
+	background: #ffffff;
+
+}
+
+@media only screen and (min-width: 992px) {
+	body {
+		padding-top: 78px;
+	}
+	.header-section {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1000;
+		box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+
+	}
+	#hero-section,
+	#services,
+	#testimonials,
+	#events,
+	#about-us,
+	#rooms {
+		scroll-margin-top: 96px;
+	}
+}
 
 .header-section.header-normal .menu-item {
 	-webkit-box-shadow: 0px 12px 15px rgba(36, 11, 12, 0.05);
@@ -396,7 +427,7 @@ ul, ol {
 	z-index: 9;
 }
 .menu-item .logo {
-	padding: 25px 0;
+	padding: 15px 0;
 }
 .menu-item .logo a {
 	display: inline-block;
@@ -689,11 +720,11 @@ ul, ol {
 	border-top: 1px solid #e5e5e5;
 }
 .services-section .section-title {
-	margin-bottom: 36px;
+	margin-bottom: 5px;
 }
 .service-item {
 	text-align: center;
-	padding: 30px 35px 18px;
+	padding: 5px 35px 8px;
 	-webkit-transition: all 0.3s;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
@@ -720,8 +751,8 @@ ul, ol {
 .service-item h4 {
 	color: #19191a;
 	font-size: 22px;
-	margin-bottom: 15px;
-	margin-top: 10px;
+	margin-bottom: 5px;
+	margin-top: 5px;
 	-webkit-transition: all 0.3s;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
@@ -742,7 +773,7 @@ ul, ol {
 	overflow: hidden;
 }
 .hp-room-items .hp-room-item {
-	height: 600px;
+	height: 450px;
 	margin-right: -15px;
 	position: relative;
 	overflow: hidden;
@@ -947,8 +978,30 @@ ul, ol {
 .footer-section .footer-text .ft-contact ul li {
 	font-size: 16px;
 	color: #aaaab3;
-	line-height: 32px;
+	line-height: 1.6;
 	list-style: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	gap: 10px;
+	margin-bottom: 6px;
+}
+.footer-section .footer-text .ft-contact ul li:last-child {
+	margin-bottom: 0;
+}
+.footer-section .footer-text .ft-contact ul li > span:first-child {
+	width: 18px;
+	min-width: 18px;
+	text-align: center;
+	line-height: 1.6;
+}
+.footer-section .footer-text .ft-contact ul li > span:last-child {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
 }
 .footer-section .footer-text .ft-newslatter h6 {
 	font-size: 14px;
