@@ -10,6 +10,3 @@
 - special-offers ?
 
 ## UI elements 
-###  mobile view 
-- stick header, menu button leftside, logo in center, bookNow+lang rightside
-- remove lang + bookNow btn out of menu sidebar,
