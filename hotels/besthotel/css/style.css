@@ -32,9 +32,9 @@
 /* Template default CSS
 /*----------------------------------------*/
 :root {
-    --brand-color: #712c2b;
-	--brand-color-light: #dfa974;
-	--brand-color-lighter: #f0d0bb;
+    --brand-color: #7B241C;
+	--brand-color-light: #DFAD75;
+	--brand-color-lighter: #FFDDBA;
 }
 
 html, body {
