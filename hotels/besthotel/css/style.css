@@ -800,6 +800,72 @@ ul, ol {
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
 }
+
+/*------------------------
+  Service Page Room Section 
+-------------------------*/
+
+.service-row {
+    padding: 28px 32px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    color: #ffffff;
+    transition: all 0.25s ease;
+}
+
+.service-icon {
+	font-size: 40px;
+	color: var(--brand-color);
+}
+
+.service-row:hover {
+    background: var(--brand-color);
+    border-color: var(--brand-color-light);
+    transform: translateY(-2px);
+}
+.service-row:hover i {
+	color: #ffffff;
+}
+.service-row:hover h4 {
+	color: #ffffff;
+}
+.service-row:hover p {
+	color: #ffffff;
+}
+
+.service-row:hover .service-tag {
+	background: var(--brand-color-light);
+}
+
+.service-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+	background: var(--brand-color);
+	color: #ffffff;
+}
+
+.service-row .service-tag {
+    text-align: left;
+}
+
+@media (max-width: 576px) {
+    .service-row {
+        margin-left: 4px;
+        margin-right: 4px;
+		margin-bottom: 10px !important;
+		text-align: center;
+    }
+	.service-icon {
+        margin-bottom: 8px;
+    }
+	.service-row .service-tag {
+        text-align: center;
+    }
+}
+
 /*------------------------
   Home Page Room Section 
 -------------------------*/
