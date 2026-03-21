@@ -1330,77 +1330,148 @@ h2 {
 -------------------------*/
 
 .hp-room-items {
-  margin-left: -15px;
-  margin-right: -15px;
-  overflow: hidden;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.hp-room-section .container-fluid {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.hp-room-items .row {
+  margin-left: -7px;
+  margin-right: -7px;
+}
+
+.hp-room-items .row > [class*="col-"] {
+  display: flex;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 .hp-room-items .hp-room-item {
-  height: 450px;
-  margin-right: -15px;
+  width: 100%;
+  margin-bottom: 14px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 18px 40px rgba(31, 18, 10, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hp-room-items .hp-room-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 46px rgba(31, 18, 10, 0.12);
+}
+
+.hp-room-items .hp-room-item .hp-room-media {
   position: relative;
+  min-height: 300px;
+  background-color: #eadfd3;
   overflow: hidden;
 }
 
-.hp-room-items .hp-room-item:hover .hr-text {
-  bottom: 135px;
-}
-.hp-room-items .hp-room-item:hover .hr-text h2 {
-  margin-bottom: 30px;
-}
-.hp-room-items .hp-room-item .hr-text {
+.hp-room-items .hp-room-item .hp-room-media::after {
+  content: "";
   position: absolute;
-  left: 45px;
-  right: 25px;
-  bottom: -200px;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0) 45%);
+  pointer-events: none;
+}
+
+.hp-room-items .hp-room-item .hp-room-price {
+  position: absolute;
+  top: 18px;
+  right: 18px;
   z-index: 2;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-.hp-room-items .hp-room-item .hr-text h3 {
-  color: #ffffff;
-  text-shadow: 1px 1px 2px var(--brand-color);
-  margin-bottom: 15px;
-}
-.hp-room-items .hp-room-item .hr-text h2 {
+  padding: 14px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
   color: var(--brand-color);
-  font-size: 46px;
-  text-shadow: 1px 1px 4px var(--brand-color-lighter);
-  /* -webkit-text-stroke: 1px #d5d5d5; */
+  font-size: 12px;
   font-weight: 700;
-  margin-bottom: 50px;
-  -webkit-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  box-shadow: 0 10px 24px rgba(27, 16, 12, 0.08);
 }
-.hp-room-items .hp-room-item .hr-text h2 span {
+
+.hp-room-items .hp-room-item .hp-room-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 22px 20px 20px;
+  background: #ffffff;
+}
+
+.hp-room-items .hp-room-item .hp-room-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 22px;
+  flex-wrap: wrap;
+}
+
+.hp-room-items .hp-room-item .hp-room-actions .primary-btn {
+  color: #3f55b1;
+  font-size: 20px;
+}
+
+.hp-room-items .hp-room-item .hp-room-actions .primary-btn:after {
+  background: #3f55b1;
+}
+
+.hp-room-items .hp-room-item .hp-room-reserve {
+  padding: 14px 24px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.hp-room-items .hp-room-item .hp-room-content h3 {
+  color: #7b241c;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hp-room-items .hp-room-item .hp-room-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 22px;
+  margin-top: 16px;
+  color: #6f5f55;
   font-family: "Cabin", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #fff6f6;
-  text-shadow: 1px 1px 3px var(--brand-color);
 }
-/* .hp-room-items .hp-room-item .hr-text table {
-	margin-bottom: 3px;
-	background: rgba(56, 56, 56, 0.5);
-	-webkit-backdrop-filter: blur(8px);
-	backdrop-filter: blur(8px);
-	border-collapse: collapse;
+
+.hp-room-items .hp-room-item .hp-room-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
-.hp-room-items .hp-room-item .hr-text table tbody tr td {
-} */
-.hp-room-items .hp-room-item .hr-text table tbody tr td {
-  font-size: 16px;
-  color: #ffffff;
-  text-shadow: 1px 2px 2px var(--brand-color);
-  /* padding: 0px 2px 0px 10px; */
-  /* line-height: 36px; */
+
+.hp-room-items .hp-room-item .hp-room-meta i {
+  color: var(--brand-color);
+  font-size: 15px;
 }
-.hp-room-items .hp-room-item .hr-text table tbody tr td.r-o {
-  width: 120px;
-}
-.hp-room-items .hp-room-item .hr-text .primary-btn:after {
-  background: #ffffff;
+
+.hp-room-items .hp-room-item .hp-room-content p {
+  margin-top: 18px;
+  margin-bottom: 0;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #5c514a;
 }
 /*---------------------
   Testimonial Slider
@@ -3703,84 +3774,102 @@ body.room-modal-open {
 }
 
 /*---------------------
-  HP Room Item zoom effect
+  HP Room cards responsive overrides
 -----------------------*/
-.hp-room-items .hp-room-item {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: #111111;
-}
-
-.hp-room-items .hp-room-item::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: rgba(32, 32, 32, 0.05);
-  background-image: inherit;
-  background-size: inherit;
-  background-position: inherit;
-  background-repeat: inherit;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: -webkit-transform 0.45s ease;
-  transition: -webkit-transform 0.45s ease;
-  -o-transition: transform 0.45s ease;
-  transition: transform 0.45s ease;
-  transition:
-    transform 0.45s ease,
-    -webkit-transform 0.45s ease;
-}
-
-.hp-room-items .hp-room-item:hover::before,
-.hp-room-items .hp-room-item:focus-within::before {
-  -webkit-transform: scale(1.08);
-  -ms-transform: scale(1.08);
-  transform: scale(1.08);
-}
-
-.hp-room-items .hp-room-item .hr-text {
-  z-index: 1;
-  left: 24px;
-  right: 18px;
-  bottom: 22px;
-}
-
-.hp-room-items .hp-room-item:hover .hr-text {
-  bottom: 22px;
-}
-
-.hp-room-items .hp-room-item .hr-text h2,
-.hp-room-items .hp-room-item:hover .hr-text h2 {
-  margin-bottom: 16px;
-}
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .hp-room-items {
+    margin: 0;
+  }
+
+  .hp-room-items .row {
+    margin-left: -6px;
+    margin-right: -6px;
+  }
+
+  .hp-room-items .row > [class*="col-"] {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
   .hp-room-items .hp-room-item {
-    height: 640px;
+    margin-bottom: 12px;
+  }
+
+  .hp-room-items .hp-room-item .hp-room-media {
+    min-height: 300px;
   }
 }
 
 @media only screen and (max-width: 1199px) {
-  .hp-room-items .hp-room-item .hr-text h2 {
-    font-size: 40px;
+  .hp-room-items .hp-room-item .hp-room-content h3 {
+    font-size: 30px;
   }
-  .hp-room-items .hp-room-item .hr-text table tbody tr td {
-    font-size: 14px;
-  }
-  .hp-room-items .hp-room-item .hr-text table tbody tr td.r-o {
-    width: 90px;
+
+  .hp-room-items .hp-room-item .hp-room-content p {
+    font-size: 16px;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .hp-room-items .hp-room-item .hr-text h2 {
-    font-size: 34px;
+  .hp-room-items {
+    margin: 0;
   }
-  .hp-room-items .hp-room-item .hr-text h3 {
+
+  .hp-room-items .row {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+
+  .hp-room-items .row > [class*="col-"] {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .hp-room-items .hp-room-item {
     margin-bottom: 10px;
+  }
+
+  .hp-room-items .hp-room-item .hp-room-media {
+    min-height: 250px;
+  }
+
+  .hp-room-items .hp-room-item .hp-room-price {
+    top: 14px;
+    right: 14px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    letter-spacing: 1.5px;
+  }
+
+  .hp-room-items .hp-room-item .hp-room-content {
+    padding: 20px 16px 18px;
+  }
+
+  .hp-room-items .hp-room-item .hp-room-content h3 {
+    font-size: 26px;
+  }
+
+  .hp-room-items .hp-room-item .hp-room-meta {
+    gap: 12px 18px;
+    font-size: 15px;
+  }
+
+  .hp-room-items .hp-room-item .hp-room-content p {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .hp-room-items .hp-room-item .hp-room-actions {
+    gap: 12px;
+    padding-top: 18px;
+  }
+
+  .hp-room-items .hp-room-item .hp-room-actions .primary-btn {
+    font-size: 18px;
+  }
+
+  .hp-room-items .hp-room-item .hp-room-reserve {
+    padding: 12px 18px 11px;
   }
 }
