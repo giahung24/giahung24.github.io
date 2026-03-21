@@ -71,7 +71,7 @@ h6 {
 p {
 	font-size: 16px;
 	font-family: "Cabin", sans-serif;
-	color: #6b6b6b;
+	color: #3e3e3e;
 	font-weight: 400;
 	line-height: 26px;
 	margin: 0 0 15px 0;
@@ -127,7 +127,7 @@ ul, ol {
 	background-position: top center;
 }
 .spad {
-	padding-top: 100px;
+	padding-top: 74px;
 	padding-bottom: 100px;
 }
 .spad-2 {
@@ -726,6 +726,28 @@ ul, ol {
 .about-pic img {
 	min-width: 100%;
 }
+.about-carousel {
+	overflow: hidden;
+	border-radius: 6px;
+}
+.about-carousel .carousel-item img {
+	width: 100%;
+	height: 420px;
+	object-fit: cover;
+	margin-bottom: 0;
+}
+.about-carousel .carousel-control-prev,
+.about-carousel .carousel-control-next {
+	width: 12%;
+}
+.about-carousel .carousel-indicators {
+	margin-bottom: 10px;
+}
+.about-carousel .carousel-indicators li {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+}
 /*---------------------
   Service Section
 -----------------------*/
@@ -1260,7 +1282,6 @@ ul, ol {
 -----------------------*/
 
 .rooms-section {
-	padding-top: 30px;
 	padding-bottom: 30px;
 }
 .rooms-section .container-fluid {
@@ -2492,10 +2513,49 @@ body.room-modal-open {
 	height: 470px;
 	-webkit-box-shadow: 0px 14px 35px rgba(0, 0, 0, 0.15);
 	box-shadow: 0px 14px 35px rgba(0, 0, 0, 0.15);
-	margin-top: 75px;
+	margin-top: 25px;
 }
 .map iframe {
 	width: 100%;
+}
+
+/*---------------------
+  About Section
+-----------------------*/
+.about-section p {
+	font-size: 18px;
+}
+
+.about-subtitle {
+	color: var(--brand-color);
+}
+
+.about-text h2 {
+	color: #111111;
+	font-size: 44px;
+	margin-bottom: 24px;
+}
+
+.about-list {
+	/* border: 1px solid #ebebeb; */
+	list-style: none;
+}
+.about-list hr {
+	color: #ebebeb;
+	height: 1px;
+}
+
+.about-list li:first-child {
+	padding-top: 0;
+}
+.about-list li:last-child {
+	padding-bottom: 0;
+}
+
+.about-list h5 i {
+	width: 24px;
+	text-align: center;
+	color: var(--brand-color);
 }
 /*-------------------------------- Responsive Media Styles --------------------------------*/
 
@@ -2839,6 +2899,10 @@ body.room-modal-open {
 	}
 	.about-pic img {
 		margin-bottom: 20px;
+	}
+	.about-carousel .carousel-item img {
+		/* height: 260px; */
+		margin-bottom: 0;
 	}
 	.room-booking {
 		padding: 0;
