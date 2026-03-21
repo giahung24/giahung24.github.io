@@ -21,8 +21,8 @@
     "smoking": "No smoking",
     "images": ["../img/room/room--2.jpg", "../img/room/room-2.jpg", "../img/room/room-b2.jpg", "../img/room/room-details.jpg"]
   },
-  "disability-room": {
-    "title": "Double Room - Disability Access",
+  "prm-room": {
+    "title": "Double Room - PRM Access",
     "size": "20 m2",
     "bed": "1 double bed",
     "description": "This air-conditioned double room is comprised of a flat-screen TV with cable channels and a private bathroom. The unit has 1 bed.",
