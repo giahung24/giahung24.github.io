@@ -565,6 +565,9 @@ ol {
 .offcanvas-menu-wrapper {
   display: none;
 }
+.mobile-sticky-banner {
+  display: none;
+}
 /*---------------------
   Hero
 -----------------------*/
@@ -1107,6 +1110,82 @@ h2 {
 }
 
 @media (max-width: 767px) {
+  .header-section .menu-item .nav-menu .bk-btn,
+  .header-section .menu-item .nav-menu .language-option {
+    display: none !important;
+  }
+
+  .mobile-sticky-banner {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    padding: 10px 15px;
+    border-top: 1px solid var(--brand-color);
+  }
+
+  .mobile-sticky-banner .ms-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .mobile-sticky-banner .ms-lang {
+    flex: 0 0 40px;
+  }
+
+  .mobile-sticky-banner .ms-lang .language-option {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-sticky-banner .ms-lang .language-option .current-lang {
+    font-size: 14px;
+    font-weight: 600;
+    color: #19191a;
+  }
+
+  .mobile-sticky-banner .ms-lang .language-option .flag-dropdown {
+    bottom: 100%;
+    top: auto;
+    left: 0;
+    right: auto;
+    margin-bottom: 10px;
+  }
+
+  .mobile-sticky-banner .ms-book {
+    flex: 1;
+    background: var(--brand-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+  }
+
+  .mobile-sticky-banner .ms-call {
+    flex: 0 0 45px;
+    height: 45px;
+    background: var(--brand-color-light); /* Green for call/whatsapp feel, or use brand color */
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 18px;
+  }
+
   .services-mosaic-section {
     padding-top: 22px;
     padding-bottom: 56px;
