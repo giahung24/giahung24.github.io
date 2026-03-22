@@ -290,7 +290,21 @@
             }
         });
 
-        resolveRoomData();
+        resolveRoomData().done(function (data) {
+            $('.room-showcase-item').each(function () {
+                var $item = $(this);
+                var roomId = $item.find('.room-modal-trigger').data('roomId');
+                if (roomId && data[roomId]) {
+                    var room = data[roomId];
+                    if (room.description) {
+                        $item.find('.room-showcase-desc').text(room.description);
+                    }
+                    if (room.price) {
+                        $item.find('.room-showcase-amount').text(room.price);
+                    }
+                }
+            });
+        });
     })();
 
     /*------------------
