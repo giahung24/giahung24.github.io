@@ -1,0 +1,48 @@
+{
+  "double-room": {
+    "title": "Chambre Double",
+    "size": "20 m2",
+    "bed": "1 lit double",
+    "description": "Cette chambre double climatisée dispose d'une télévision à écran plat avec chaînes câblées et d'une salle de bains privative. Idéale pour les couples et les courts séjours en ville.",
+    "chips": ["20 m2", "Climatisation", "Salle de bains privée", "TV écran plat", "Wi-Fi gratuit"],
+    "bathroom": ["Douche", "Toilettes", "Papier toilette", "Sèche-cheveux"],
+    "facilities": ["Bureau", "TV", "Chaînes câblées", "Chauffage", "Insonorisation", "Armoire ou penderie", "Prise près du lit", "Service de réveil"],
+    "smoking": "Non-fumeur",
+    "images": ["../img/room/room--1.jpg", "../img/room/room-1.jpg", "../img/room/room-b1.jpg", "../img/room/room-details.jpg"]
+  },
+  "double-twin-room": {
+    "title": "Chambre Double/Twin",
+    "size": "22 m2",
+    "bed": "1 lit queen-size ou 2 lits simples",
+    "description": "Conçue pour les couples et les voyages d'affaires, cette chambre climatisée propose une literie modulable, une salle de bains privative et une télévision à écran plat.",
+    "chips": ["22 m2", "Climatisation", "Salle de bains privée", "TV écran plat", "Wi-Fi gratuit"],
+    "bathroom": ["Douche", "Toilettes", "Papier toilette", "Serviettes"],
+    "facilities": ["Bureau", "TV", "Chaînes câblées", "Chauffage", "Insonorisation", "Armoire ou penderie", "Linge de lit", "Climatisation individuelle"],
+    "smoking": "Non-fumeur",
+    "images": ["../img/room/room--2.jpg", "../img/room/room-2.jpg", "../img/room/room-b2.jpg", "../img/room/room-details.jpg"]
+  },
+  "prm-room": {
+    "title": "Chambre Double - Accès PMR",
+    "size": "20 m2",
+    "bed": "1 lit double",
+    "description": "Cette chambre double climatisée comprend une télévision à écran plat avec chaînes câblées et une salle de bains privative. Elle dispose d'un lit.",
+    "chips": ["20 m2", "Climatisation", "Salle de bains privée", "TV écran plat", "Wi-Fi gratuit", "Insonorisation"],
+    "bathroom": ["Douche", "Toilettes", "Papier toilette"],
+    "facilities": ["Bureau", "TV", "Linge de lit", "Parquet", "Logement entier en rez-de-chaussée", "TV écran plat", "Service de réveil", "Climatisation individuelle", "Chauffage", "Chaînes câblées", "Serviettes", "Armoire ou penderie", "Logement entier accessible en fauteuil roulant", "Prise près du lit"],
+    "smoking": "Non-fumeur",
+    "images": ["../img/room/room--3.jpg", "../img/room/room-3.jpg", "../img/room/room-b3.jpg", "../img/room/room-details.jpg"]
+  },
+  "triple-room": {
+    "title": "Chambre Triple",
+    "size": "24 m2",
+    "bed": "3 lits simples",
+    "description": "Spacieuse et pratique pour les familles ou petits groupes, avec literie de qualité, salle de bains privative, télévision écran plat et confort moderne.",
+    "chips": ["24 m2", "Climatisation", "Salle de bains privée", "TV écran plat", "Wi-Fi gratuit"],
+    "bathroom": ["Douche", "Toilettes", "Papier toilette", "Serviettes"],
+    "facilities": ["Bureau", "TV", "Chaînes câblées", "Chauffage", "Insonorisation", "Armoire ou penderie", "Linge de lit", "Service de réveil"],
+    "smoking": "Non-fumeur",
+    "images": ["../img/room/room--4.jpg", "../img/room/room-4.jpg", "../img/room/room-b4.jpg", "../img/room/room-details.jpg"]
+  }
+}
+
+
