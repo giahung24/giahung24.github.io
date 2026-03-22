@@ -599,7 +599,8 @@ ol {
 }
 .hero-text {
   padding-top: 145px;
-  text-shadow: 2px 2px 4px var(--brand-color-light);
+  text-align: center;
+  text-shadow: 2px 2px 4px var(--brand-color);
 }
 .hero-text h1,
 h2 {
@@ -739,6 +740,15 @@ h2 {
 .hero-slider .owl-item,
 .hero-slider .hs-item {
   height: 100%;
+}
+.hero-slider .hs-item.set-bg::after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  background: rgba(0, 0, 0, 0.3);
 }
 /*---------------------
   About US
