@@ -15,17 +15,61 @@
         Preloader
     --------------------*/
     $(window).on('load', function () {
+        var $preloader = $("#preloader");
+        if (!$preloader.length) {
+            return;
+        }
+
         $(".loader").fadeOut();
-        $("#preloader").delay(200).fadeOut("slow");
+        $preloader.delay(200).fadeOut("slow");
     });
 
     /*------------------
         Background Set
     --------------------*/
-    $('.set-bg').each(function () {
-        var bg = $(this).data('setbg');
-        $(this).css('background-image', 'url(' + bg + ')');
-    });
+    function applySetBg(node) {
+        if (!node || node.dataset.bgLoaded === 'true') {
+            return;
+        }
+
+        var bg = node.getAttribute('data-setbg');
+        if (!bg) {
+            return;
+        }
+
+        node.style.backgroundImage = 'url(' + bg + ')';
+        node.dataset.bgLoaded = 'true';
+    }
+
+    var setBgNodes = document.querySelectorAll('.set-bg');
+
+    if ('IntersectionObserver' in window) {
+        var setBgObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                applySetBg(entry.target);
+                observer.unobserve(entry.target);
+            });
+        }, {
+            rootMargin: '300px 0px'
+        });
+
+        setBgNodes.forEach(function (node) {
+            if (node.getAttribute('data-priority') === 'high') {
+                applySetBg(node);
+                return;
+            }
+
+            setBgObserver.observe(node);
+        });
+    } else {
+        setBgNodes.forEach(function (node) {
+            applySetBg(node);
+        });
+    }
 
     //Offcanvas Menu
     $(".canvas-open").on('click', function () {
@@ -52,46 +96,61 @@
     /*------------------
 		Navigation
 	--------------------*/
-    $(".mobile-menu").slicknav({
-        prependTo: '#mobile-menu-wrap',
-        allowParentLinks: true
-    });
+    if ($.fn.slicknav && $(".mobile-menu").length) {
+        $(".mobile-menu").slicknav({
+            prependTo: '#mobile-menu-wrap',
+            allowParentLinks: true
+        });
+    }
 
     /*------------------
         Hero Slider
     --------------------*/
-   $(".hero-slider").owlCarousel({
-        loop: true,
-        margin: 0,
-        items: 1,
-        dots: true,
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
-        smartSpeed: 1200,
-        autoHeight: false,
-        autoplay: true,
-        mouseDrag: false
-    });
+    if ($.fn.owlCarousel && $(".hero-slider").length) {
+        $(".hero-slider").owlCarousel({
+            loop: true,
+            margin: 0,
+            items: 1,
+            dots: true,
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn',
+            smartSpeed: 1200,
+            autoHeight: false,
+            autoplay: true,
+            mouseDrag: false
+        });
+
+        $('.hero-slider .owl-dot').each(function (index) {
+            $(this).attr('aria-label', 'Go to hero slide ' + (index + 1));
+        });
+    }
 
     /*------------------------
 		Testimonial Slider
     ----------------------- */
-    $(".testimonial-slider").owlCarousel({
-        items: 1,
-        dots: false,
-        autoplay: true,
-        loop: true,
-        smartSpeed: 1200,
-        nav: true,
-        navText: ["<i class='arrow_left'></i>", "<i class='arrow_right'></i>"]
-    });
+    if ($.fn.owlCarousel && $(".testimonial-slider").length) {
+        $(".testimonial-slider").owlCarousel({
+            items: 1,
+            dots: false,
+            autoplay: true,
+            loop: true,
+            smartSpeed: 1200,
+            nav: true,
+            navText: ["<i class='arrow_left'></i>", "<i class='arrow_right'></i>"]
+        });
+
+        $('.testimonial-slider .owl-prev').attr('aria-label', 'Previous testimonial');
+        $('.testimonial-slider .owl-next').attr('aria-label', 'Next testimonial');
+    }
 
     /*------------------
         Magnific Popup
     --------------------*/
-    $('.video-popup').magnificPopup({
-        type: 'iframe'
-    });
+    if ($.fn.magnificPopup && $('.video-popup').length) {
+        $('.video-popup').magnificPopup({
+            type: 'iframe'
+        });
+    }
 
     /*------------------
         Room Detail Modal
@@ -310,15 +369,19 @@
     /*------------------
 		Date Picker
 	--------------------*/
-    $(".date-input").datepicker({
-        minDate: 0,
-        dateFormat: 'dd MM, yy'
-    });
+    if ($.fn.datepicker && $(".date-input").length) {
+        $(".date-input").datepicker({
+            minDate: 0,
+            dateFormat: 'dd MM, yy'
+        });
+    }
 
     /*------------------
 		Nice Select
 	--------------------*/
-    $("select").niceSelect();
+    if ($.fn.niceSelect && $("select").length) {
+        $("select").niceSelect();
+    }
 
     /*------------------
         Smooth Scroll
