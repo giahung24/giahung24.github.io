@@ -11,4 +11,7 @@
 
 # My TODO
 ## UI elements 
-- home page / room galery : change to this layout ![alt text]({A60FCF13-C25A-4FC2-93E6-8075813F27F2}.png)
+
+
+## Localization
+- Check external link (events)
