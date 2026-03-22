@@ -15,3 +15,7 @@
 
 ## Localization
 - Check external link (events)
+
+## SEO
+- rerun SEO optim agent when having domain name
+- create email contact@besthotelbordeauxsud.fr (or edit it in code)

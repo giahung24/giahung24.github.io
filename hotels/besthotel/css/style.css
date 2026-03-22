@@ -94,7 +94,7 @@ a:hover,
 a:focus {
   text-decoration: none;
   outline: none;
-  color: #fff;
+  color: var(--brand-color-light);
 }
 ul,
 ol {
@@ -120,6 +120,13 @@ ol {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+.section-title h1 {
+  font-size: 50px;
+  color: #19191a;
+  line-height: 58px;
+  margin-top: 2px;
+  margin-bottom: 20px;
 }
 .section-title h2 {
   font-size: 44px;
@@ -1040,7 +1047,7 @@ h2 {
 
 .cta-inner,
 .services-cta-inner {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -1466,7 +1473,6 @@ h2 {
 .hp-room-items .hp-room-item .hp-room-content h3 {
   color: #7b241c;
   font-size: 34px;
-  font-weight: 700;
   line-height: 1.2;
 }
 
