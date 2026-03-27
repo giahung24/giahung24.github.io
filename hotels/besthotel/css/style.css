@@ -4112,6 +4112,7 @@ body.room-modal-open {
 
   .hero-text {
     margin-bottom: 40px;
+    padding-top: 0px;
   }
 }
 
@@ -4132,6 +4133,11 @@ body.room-modal-open {
 
   .hp-room-item {
     margin-bottom: 15px;
+  }
+
+  .hero-text {
+    margin-bottom: 40px;
+    padding-top: 0px;
   }
 }
 
@@ -4295,6 +4301,11 @@ body.room-modal-open {
   .hp-room-item {
     margin-bottom: 10px;
   }
+
+  .hero-text {
+    margin-bottom: 40px;
+    padding-top: 0px;
+  }
 }
 
 /* Small Mobile: 320px */
@@ -4379,6 +4390,11 @@ body.room-modal-open {
 
   .blog-details-text .comment-option .single-comment-item .sc-text a {
     margin-bottom: 10px;
+  }
+
+  .hero-text {
+    margin-bottom: 40px;
+    padding-top: 0px;
   }
 }
 
