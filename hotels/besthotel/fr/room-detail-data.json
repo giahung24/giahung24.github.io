@@ -1,5 +1,6 @@
 {
   "double-room": {
+    "roomId": "85273",
     "title": "Chambre Double",
     "size": "11 m2",
     "bed": "1 lit double",
@@ -12,6 +13,7 @@
     "images": ["../img/room/room--1.jpg", "../img/room/room-1.jpg", "../img/room/room-b1.jpg", "../img/room/room-details.jpg"]
   },
   "double-twin-room": {
+    "roomId": "86040",
     "title": "Chambre Double/Twin",
     "size": "11 m2",
     "bed": "1 lit queen-size ou 2 lits simples",
@@ -24,6 +26,7 @@
     "images": ["../img/room/room--2.jpg", "../img/room/room-2.jpg", "../img/room/room-b2.jpg", "../img/room/room-details.jpg"]
   },
   "prm-room": {
+    "roomId": "85494",
     "title": "Chambre Double - Accès PMR",
     "size": "20 m2",
     "bed": "1 lit double",
@@ -36,6 +39,7 @@
     "images": ["../img/room/room--3.jpg", "../img/room/room-3.jpg", "../img/room/room-b3.jpg", "../img/room/room-details.jpg"]
   },
   "triple-room": {
+    "roomId": "86029",
     "title": "Chambre Triple",
     "size": "18 m2",
     "bed": "1 lit simple et 1 lit double",

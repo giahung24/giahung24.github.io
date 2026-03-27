@@ -1,5 +1,6 @@
 {
   "double-room": {
+    "roomId": "85273",
     "title": "Double Room",
     "price": 53,
     "size": "11 m2",
@@ -12,6 +13,7 @@
     "images": ["../img/room/room--1.jpg", "../img/room/room-1.jpg", "../img/room/room-b1.jpg", "../img/room/room-details.jpg"]
   },
   "double-twin-room": {
+    "roomId": "86040",
     "title": "Double/Twin Room",
     "price": 60,
     "size": "11 m2",
@@ -24,6 +26,7 @@
     "images": ["../img/room/room--2.jpg", "../img/room/room-2.jpg", "../img/room/room-b2.jpg", "../img/room/room-details.jpg"]
   },
   "prm-room": {
+    "roomId": "85494",
     "title": "Double Room - PRM Access",
     "price": 80,
     "size": "20 m2",
@@ -36,6 +39,7 @@
     "images": ["../img/room/room--3.jpg", "../img/room/room-3.jpg", "../img/room/room-b3.jpg", "../img/room/room-details.jpg"]
   },
   "triple-room": {
+    "roomId": "86029",
     "title": "Triple Room",
     "price": 80,
     "size": "18 m2",

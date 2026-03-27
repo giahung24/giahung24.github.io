@@ -218,8 +218,26 @@
         var $bathroom = $('#roomDetailBathroom');
         var $facilities = $('#roomDetailFacilities');
         var $smoking = $('#roomDetailSmoking');
+        var $bookButton = $('#roomBookButton');
         var $closeButton = $modal.find('.room-detail-modal__close');
         var lastFocusedElement = null;
+        var roomBookingLocale = (function resolveRoomBookingLocale() {
+            var segments = (window.location.pathname || '').split('/').filter(Boolean);
+            for (var i = 0; i < segments.length; i++) {
+                var s = segments[i].toLowerCase();
+                if (s === 'en' || s === '@en') {
+                    return 'en-US';
+                }
+                if (s === 'fr' || s === '@fr') {
+                    return 'fr-FR';
+                }
+            }
+            return 'fr-FR';
+        })();
+        var roomBookingUrlPrefix =
+            'https://www.secure-hotel-booking.com/d-edge/Best-Hotel-Bordeaux-Sud/J6VH/' +
+            roomBookingLocale +
+            '/DateSelection?roomId=';
 
         function buildList($container, items) {
             $container.empty();
@@ -301,6 +319,18 @@
             }
 
             renderRoom(room);
+            if ($bookButton.length) {
+                if (room.roomId) {
+                    $bookButton.attr(
+                        'href',
+                        roomBookingUrlPrefix +
+                            encodeURIComponent(String(room.roomId)) +
+                            '&currency=EUR'
+                    );
+                } else {
+                    $bookButton.attr('href', '#');
+                }
+            }
             lastFocusedElement = triggerElement || null;
             $modal.addClass('is-open').attr('aria-hidden', 'false');
             $('body').addClass('room-modal-open');
@@ -370,10 +400,94 @@
 		Date Picker
 	--------------------*/
     if ($.fn.datepicker && $(".date-input").length) {
-        $(".date-input").datepicker({
+        var docLang = (document.documentElement.lang || '').toLowerCase();
+        var isFr = docLang.indexOf('fr') === 0;
+
+        var datepickerOpts = {
             minDate: 0,
-            dateFormat: 'dd MM, yy'
-        });
+            dateFormat: 'dd MM, yy',
+            prevText: '',
+            nextText: '',
+            beforeShow: function () {
+                setTimeout(function () {
+                    var fr = (document.documentElement.lang || '').toLowerCase().indexOf('fr') === 0;
+                    $('#ui-datepicker-div .ui-datepicker-prev').attr('aria-label', fr ? 'Mois précédent' : 'Previous month');
+                    $('#ui-datepicker-div .ui-datepicker-next').attr('aria-label', fr ? 'Mois suivant' : 'Next month');
+                }, 0);
+            }
+        };
+
+        if (isFr) {
+            $.extend(datepickerOpts, {
+                closeText: 'Fermer',
+                currentText: "Aujourd'hui",
+                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avr.', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+                dayNamesShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+                dayNamesMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'],
+                weekHeader: 'Sem.',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: ''
+            });
+        } else {
+            datepickerOpts.firstDay = 0;
+        }
+
+        $('.date-input').datepicker(datepickerOpts);
+
+        var $dateIn = $('#date-in');
+        var $dateOut = $('#date-out');
+        if ($dateIn.length && $dateOut.length) {
+            function syncCheckoutMinDate() {
+                var arrival = $dateIn.datepicker('getDate');
+                if (arrival) {
+                    var minDeparture = new Date(
+                        arrival.getFullYear(),
+                        arrival.getMonth(),
+                        arrival.getDate() + 1
+                    );
+                    $dateOut.datepicker('option', 'minDate', minDeparture);
+                    var departure = $dateOut.datepicker('getDate');
+                    if (departure && departure.getTime() <= arrival.getTime()) {
+                        $dateOut.datepicker('setDate', minDeparture);
+                    }
+                } else {
+                    $dateOut.datepicker('option', 'minDate', 1);
+                }
+            }
+
+            var checkoutPrevBeforeShow = $dateOut.datepicker('option', 'beforeShow');
+            $dateOut.datepicker('option', 'beforeShow', function (input, inst) {
+                syncCheckoutMinDate();
+                if (typeof checkoutPrevBeforeShow === 'function') {
+                    checkoutPrevBeforeShow.call(this, input, inst);
+                }
+            });
+
+            var openDepartureAfterArrivalPickerCloses = false;
+
+            $dateIn.datepicker('option', 'onSelect', function () {
+                syncCheckoutMinDate();
+                openDepartureAfterArrivalPickerCloses = true;
+            });
+            $dateIn.datepicker('option', 'onClose', function () {
+                if (!openDepartureAfterArrivalPickerCloses) {
+                    return;
+                }
+                openDepartureAfterArrivalPickerCloses = false;
+                setTimeout(function () {
+                    syncCheckoutMinDate();
+                    $dateOut.datepicker('show');
+                }, 0);
+            });
+            $dateIn.on('change', function () {
+                syncCheckoutMinDate();
+            });
+            syncCheckoutMinDate();
+        }
     }
 
     /*------------------
@@ -382,6 +496,84 @@
     if ($.fn.niceSelect && $("select").length) {
         $("select").niceSelect();
     }
+
+    /*------------------
+        Secure booking form (#AVP) — POST like fr/template.html + base.js validate():
+        action .../search?hotelId=20932; body: language, arrivalDate (Y-M-D), nights, _ga,
+        guestCountSelector, crossSell, selectedAdultCount, selectedChildCount, selectedInfantCount, rate
+	--------------------*/
+    (function initSecureHotelBookingForm() {
+        var $form = $('#AVP');
+        if (!$form.length) {
+            return;
+        }
+
+        var maxDuration = 30;
+        var messageFr = 'Date en dehors du planning';
+
+        function stripTime(d) {
+            return new Date(d.getFullYear(), d.getMonth(), d.getDate());
+        }
+
+        function countNights(arrival, departure) {
+            var a = stripTime(arrival).getTime();
+            var dep = stripTime(departure).getTime();
+            return Math.round((dep - a) / (1000 * 60 * 60 * 24));
+        }
+
+        function formatArrivalDateForAvp(arrival) {
+            var y = arrival.getFullYear();
+            var m = arrival.getMonth() + 1;
+            var day = arrival.getDate();
+            return y + '-' + m + '-' + day;
+        }
+
+        function checkGa() {
+            if (typeof ga !== 'function') {
+                return;
+            }
+            ga(function (tracker) {
+                var el = document.getElementById('_ga');
+                if (el) {
+                    el.value = tracker.get('clientId');
+                }
+            });
+        }
+
+        checkGa();
+
+        $form.on('submit', function (e) {
+            e.preventDefault();
+
+            var $in = $('#date-in');
+            var $out = $('#date-out');
+            var arrival = $in.datepicker('getDate');
+            var departure = $out.datepicker('getDate');
+
+            if (!arrival || !departure) {
+                alert(messageFr);
+                return;
+            }
+
+            var today = stripTime(new Date());
+            if (stripTime(arrival) < today) {
+                alert(messageFr);
+                return;
+            }
+
+            var nights = countNights(arrival, departure);
+            if (departure <= arrival || nights < 1 || (maxDuration > 0 && nights > maxDuration)) {
+                alert(messageFr);
+                return;
+            }
+
+            document.getElementById('AVP_arrivalDate').value = formatArrivalDateForAvp(arrival);
+            document.getElementById('AVP_nights').value = String(nights);
+            checkGa();
+
+            this.submit();
+        });
+    })();
 
     /*------------------
         Smooth Scroll
