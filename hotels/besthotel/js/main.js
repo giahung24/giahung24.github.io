@@ -214,6 +214,7 @@
         var $chips = $('#roomDetailChips');
         var $size = $('#roomDetailSize');
         var $bed = $('#roomDetailBed');
+        var $capacity = $('#roomDetailCapacity');
         var $description = $('#roomDetailDescription');
         var $bathroom = $('#roomDetailBathroom');
         var $facilities = $('#roomDetailFacilities');
@@ -299,6 +300,7 @@
             $title.text(room.title || 'Room details');
             $size.text(room.size || '');
             $bed.text(room.bed || '');
+            $capacity.text(room.capacity != null ? String(room.capacity) : '0');
             $description.text(room.description || '');
             $smoking.text(room.smoking || '');
 
