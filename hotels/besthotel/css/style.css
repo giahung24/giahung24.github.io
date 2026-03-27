@@ -735,14 +735,14 @@ h2 {
 
 .booking-form form .check-date {
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
-.booking-form form .check-date label {
+.booking-form form label {
   font-size: 14px;
   color: #707079;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 
 .booking-form form .check-date i {
@@ -754,15 +754,9 @@ h2 {
 }
 
 .booking-form form .select-option {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
-.booking-form form .select-option label {
-  font-size: 14px;
-  color: #707079;
-  display: block;
-  margin-bottom: 10px;
-}
 
 .booking-form form .select-option .nice-select {
   border-radius: 2px;
@@ -809,6 +803,10 @@ h2 {
   width: 100%;
   height: 46px;
   margin-top: 30px;
+}
+.booking-form form button:hover {
+  background: var(--brand-color);
+  color: #ffffff;
 }
 
 /*---------------------
