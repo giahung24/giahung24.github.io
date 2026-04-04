@@ -1,8 +1,6 @@
 ## Demander Agathe
 
 ## Config des chambres
-- Diff entre Double room et Double Twin (à part custom de lits)
-- Vous voulez changer le listing ?
 - Si possible, les photos des chambres devraient montrer les différentes configurations/ décorations
 
 ## Info à ajouter
@@ -16,9 +14,7 @@
 # My TODO
 ## UI elements 
 
-
-## Localization
-- Check external link (events)
+## Double check real site domain in contact ìnfo
 
 ## SEO
 - rerun SEO optim agent when having domain name

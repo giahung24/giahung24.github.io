@@ -1,5 +1,8 @@
 # SEO Strategy: Best Hotel Bordeaux Sud
 
+## Site domain 
+besthotelbordeauxsud.fr
+
 ## Target Keywords
 - **Primary**: "hotel Bordeaux Sud", "hotel Villenave-d'Ornon"
 - **Secondary**: "affordable hotel Bordeaux", "hotel with free parking Bordeaux", "2-star hotel Bordeaux Sud", "Best Hotel Bordeaux Sud"
