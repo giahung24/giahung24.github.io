@@ -500,6 +500,153 @@
     }
 
     /*------------------
+        D-edge widget selects -> Nice Select
+    --------------------*/
+    (function initWidgetNiceSelect() {
+        if (!$.fn.niceSelect) {
+            return;
+        }
+
+        var host = document.getElementById('fb-widget-1');
+        if (!host) {
+            return;
+        }
+
+        function applyNiceSelectToWidget(root) {
+            var $root = root ? $(root) : $(host);
+            var $widgetSelects = $root.find('.fbw-calendar--config select');
+
+            if (!$widgetSelects.length) {
+                return;
+            }
+
+            $widgetSelects.each(function () {
+                var $select = $(this);
+                var $next = $select.next('.nice-select');
+
+                if ($next.length) {
+                    try {
+                        $select.niceSelect('update');
+                    } catch (error) {
+                        // Re-initialize if update fails due to stale plugin state.
+                        $next.remove();
+                        $select.niceSelect();
+                    }
+                } else {
+                    $select.niceSelect();
+                }
+            });
+        }
+
+        applyNiceSelectToWidget();
+
+        var observer = new MutationObserver(function (mutations) {
+            var shouldRefresh = false;
+
+            for (var i = 0; i < mutations.length; i++) {
+                var mutation = mutations[i];
+                if (!mutation.addedNodes || !mutation.addedNodes.length) {
+                    continue;
+                }
+
+                for (var j = 0; j < mutation.addedNodes.length; j++) {
+                    var node = mutation.addedNodes[j];
+                    if (!(node instanceof Element)) {
+                        continue;
+                    }
+
+                    if (
+                        node.matches('select') ||
+                        node.matches('.fbw-calendar--config') ||
+                        node.querySelector('.fbw-calendar--config select')
+                    ) {
+                        shouldRefresh = true;
+                        break;
+                    }
+                }
+
+                if (shouldRefresh) {
+                    break;
+                }
+            }
+
+            if (shouldRefresh) {
+                applyNiceSelectToWidget(host);
+            }
+        });
+
+        observer.observe(host, {
+            childList: true,
+            subtree: true
+        });
+    })();
+
+    /*------------------
+        D-edge widget modal -> lock page scroll
+    --------------------*/
+    (function initWidgetModalScrollLock() {
+        var host = document.getElementById('fb-widget-1');
+        if (!host) {
+            return;
+        }
+
+        function isElementVisible(node) {
+            if (!(node instanceof Element)) {
+                return false;
+            }
+
+            var style = window.getComputedStyle(node);
+            if (
+                style.display === 'none' ||
+                style.visibility === 'hidden' ||
+                style.opacity === '0'
+            ) {
+                return false;
+            }
+
+            var rect = node.getBoundingClientRect();
+            return rect.width > 0 && rect.height > 0;
+        }
+
+        function updateBodyScrollLock() {
+            var masks = host.querySelectorAll('.modal-mask');
+            var isOpen = false;
+
+            for (var i = 0; i < masks.length; i++) {
+                if (isElementVisible(masks[i])) {
+                    isOpen = true;
+                    break;
+                }
+            }
+
+            document.body.classList.toggle('fb-widget-modal-open', isOpen);
+        }
+
+        updateBodyScrollLock();
+
+        var observer = new MutationObserver(function () {
+            updateBodyScrollLock();
+        });
+
+        observer.observe(host, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['class', 'style']
+        });
+
+        host.addEventListener('click', function () {
+            setTimeout(updateBodyScrollLock, 0);
+        }, true);
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                setTimeout(updateBodyScrollLock, 0);
+            }
+        });
+    })();
+
+    /*------------------
         Secure booking form (#AVP) — POST like fr/template.html + base.js validate():
         action .../search?hotelId=20932; body: language, arrivalDate (Y-M-D), nights, _ga,
         guestCountSelector, crossSell, selectedAdultCount, selectedChildCount, selectedInfantCount, rate

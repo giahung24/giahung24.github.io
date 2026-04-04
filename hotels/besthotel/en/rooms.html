@@ -50,6 +50,7 @@
   <link rel="alternate" hreflang="en" href="https://besthotelbordeauxsud.fr/en/rooms.html" />
   <link rel="alternate" hreflang="fr" href="https://besthotelbordeauxsud.fr/fr/rooms.html" />
   <link rel="alternate" hreflang="x-default" href="https://besthotelbordeauxsud.fr/en/rooms.html" />
+  <link rel="stylesheet" property="stylesheet" href="https://websdk.d-edge.com/widgets/app.css" />
 
   <link rel="icon" type="image/webp" href="../img/favicon.webp" />
 
@@ -140,8 +141,7 @@
                   <li><a href="./about.html">About</a></li>
                 </ul>
               </nav>
-              <a href="https://www.secure-hotel-booking.com/Best-Hotel-Bordeaux-Sud/J6VH/en-US?hotelId=20932"
-                target="_blank" class="bk-btn">Book Now</a>
+              <span id="fb-widget-1" class="fb-widget" data-fbConfig="0"></span>
               <div class="language-option">
                 <!-- <img src="../img/flag-en.webp" alt=""> -->
                 <span class="current-lang">EN <i class="fa fa-angle-down"></i></span>
@@ -462,6 +462,57 @@
   <!-- Mobile Sticky Banner End -->
 
   <!-- Js Plugins -->
+    <script class="fb-widget-config" data-fbConfig="0" type="application/json">
+    {
+      "params": [
+        {
+          "calendar": {
+            "firstDayOfWeek": 1,
+            "nbMonths2display": 2,
+            "title": "",
+            "showBestPrice": true,
+            "showLastRoom": true,
+            "showLastRoomThreshold": 3,
+            "showMinStayDepartureDates": true,
+            "hideControls": false,
+            "showChildrenAges": false,
+            "themeDark": false,
+            "layoutNum": 1,
+            "roomRateFiltering": 0,
+            "rateFilter": [],
+            "roomFilter": [],
+            "useLoyalty": false,
+            "loyalty": "",
+            "loyaltyParams": {},
+            "useRedirectUrlFromApi": true,
+            "daysLookAhead": 365
+          },
+          "currency": "EUR",
+          "locale": "en_GB",
+          "maxAdults": 4,
+          "maxChildren": 2,
+          "mainColor": "#7b241c",
+          "childrenMaxAge": 12,
+          "themeDark": false,
+          "openFrontInNewTab": true,
+          "property": "J6VH-20932",
+          "title": "Best Hotel Bordeaux Sud",
+          "fbWidget": "CalendarInModal"
+        }
+      ],
+      "commonParams": {
+        "redirectUrl": "https://www.secure-hotel-booking.com",
+        "showPropertiesList": true,
+        "demoMode": false,
+        "frontUrl": "https://www.secure-hotel-booking.com"
+      },
+      "_authCode": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJib29raW5nRW5naW5lUmVmZXJlbmNlIjoiSjZWSCIsImhvdGVsSWQiOiIyMDkzMiIsImdyb3VwSWQiOiIxNzQ2OCIsInJlZmVyZW5jZVJhdGVDb2RlIjoiUkFDS1BSSSIsImRpc3BsYXlOYW1lIjoiQmVzdC1Ib3RlbC1Cb3JkZWF1eC1TdWQiLCJuYmYiOjE3NzUxNDIyNDgsImV4cCI6MjUzNDAyMzAwODAwLCJpYXQiOjE3NzUxNDIyNDgsImlzcyI6IkF2YWlscHJvIEFQSSBNYW5hZ2VyIiwiYXVkIjoiZC1lZGdlIn0.3sRVquKTVWeBzOxDH3BiJ86wFmaLkhO3ID3rT9IPndt4ojFR37mI19OdPmaUyZ2fZjxSnY9oc2lIBfCOGvLABQ",
+      "propertyIndex": 0,
+      "version": "1.35.0",
+      "baseHost": "https://websdk.d-edge.com"
+    }
+    </script>
+    <script type="text/javascript" src="https://websdk.d-edge.com/widgets/app.js" defer></script>
   <script src="../js/jquery-3.3.1.min.js" defer></script>
   <script src="../js/bootstrap.min.js" defer></script>
   <script src="../js/jquery.magnific-popup.min.js" defer></script>

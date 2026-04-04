@@ -1,12 +1,3 @@
-## Demander Agathe
-
-## Config des chambres
-- Si possible, les photos des chambres devraient montrer les différentes configurations/ décorations
-
-## Info à ajouter
-- terms-and-conditions ?
-- special-offers ?
-
 ## Réclamer google map
 - corriger le lien du site (besthotel.fr)
 
