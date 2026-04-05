@@ -348,7 +348,6 @@
               <h3 class="mb-4">Contactez-nous</h3>
               <form action="https://api.staticforms.dev/submit" class="contact-form" method="POST">
                 <input type="hidden" name="apiKey" value="sf_60580f5e0f276430fff17821">
-                <input type="hidden" name="redirectTo" id="redirectTo" value="">
                 <input type="text" name="honeypot" style="display:none">
                 <div class="row">
                   <div class="col-lg-6">
@@ -502,6 +501,34 @@
   </div>
   <!-- Mobile Sticky Banner End -->
 
+  <!-- Contact Success Modal Begin -->
+  <div
+    class="modal fade"
+    id="contactSuccessModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="contactSuccessModalLabel"
+    aria-hidden="true"
+    data-backdrop="static"
+    data-keyboard="false"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body text-center p-4 p-md-5">
+          <h4 id="contactSuccessModalLabel" class="mb-3">Message envoyé</h4>
+          <p class="mb-4">
+            Votre message a été envoyé à notre équipe, nous vous revenons au plus bref délai.
+          </p>
+          <div class="d-flex flex-column flex-sm-row justify-content-center">
+            <a href="./index.html" class="cta-btn cta-btn-fill mb-2 mb-sm-0 mr-sm-2">Revenir à l'accueil</a>
+            <a href="./about.html" class="cta-btn cta-btn-outline">Page précédente</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Contact Success Modal End -->
+
   <!-- Js Plugins -->
   <script class="fb-widget-config" data-fbConfig="0" type="application/json">
       {
@@ -565,9 +592,13 @@
   <script src="../js/main.js" defer></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      var redirectInput = document.getElementById("redirectTo");
-      if (redirectInput) {
-        redirectInput.value = new URL("about_.html", window.location.href).href;
+      var $modal = window.jQuery && window.jQuery("#contactSuccessModal");
+      if ($modal && $modal.modal) {
+        $modal.modal({
+          backdrop: "static",
+          keyboard: false,
+          show: true,
+        });
       }
     });
   </script>

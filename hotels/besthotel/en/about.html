@@ -352,6 +352,7 @@
               <h3 class="mb-4">Contact Us</h3>
               <form action="https://api.staticforms.dev/submit" class="contact-form" method="POST">
                 <input type="hidden" name="apiKey" value="sf_60580f5e0f276430fff17821">
+                <input type="hidden" name="redirectTo" id="redirectTo" value="">
                 <input type="text" name="honeypot" style="display:none">
                 <div class="row">
                   <div class="col-lg-6">
@@ -569,6 +570,14 @@
   <script src="../js/owl.carousel.min.js" defer></script>
   <script src="../js/lang-switcher.js" defer></script>
   <script src="../js/main.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var redirectInput = document.getElementById("redirectTo");
+      if (redirectInput) {
+        redirectInput.value = new URL("about_.html", window.location.href).href;
+      }
+    });
+  </script>
 </body>
 
 </html>
