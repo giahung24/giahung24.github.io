@@ -776,6 +776,191 @@
     })();
 
     /*------------------
+        Contact form validation
+    --------------------*/
+    (function initContactFormValidation() {
+        var forms = document.querySelectorAll('.contact-form');
+        if (!forms.length) {
+            return;
+        }
+
+        var messages = {
+            fr: {
+                email: 'Veuillez saisir une adresse e-mail valide.',
+                message: 'Votre message doit contenir au moins 10 mots et plus de 50 caractères.'
+            },
+            en: {
+                email: 'Please enter a valid email address.',
+                message: 'Your message must contain at least 10 words and more than 50 characters.'
+            }
+        };
+
+        function resolveLocale() {
+            var lang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+            if (lang.indexOf('en') === 0) {
+                return 'en';
+            }
+            if (lang.indexOf('fr') === 0) {
+                return 'fr';
+            }
+
+            return (window.location.pathname || '').toLowerCase().indexOf('/en/') !== -1 ? 'en' : 'fr';
+        }
+
+        function countWords(value) {
+            var trimmed = (value || '').trim();
+            if (!trimmed) {
+                return 0;
+            }
+
+            return trimmed.split(/\s+/).filter(Boolean).length;
+        }
+
+        function isValidEmail(value) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((value || '').trim());
+        }
+
+        function getTooltipElement(field) {
+            return field._validationTooltip || null;
+        }
+
+        function removeTooltip(field) {
+            var tooltip = getTooltipElement(field);
+            if (tooltip && tooltip.parentNode) {
+                tooltip.parentNode.removeChild(tooltip);
+            }
+
+            field._validationTooltip = null;
+            field.classList.remove('is-validation-invalid');
+            field.removeAttribute('aria-invalid');
+        }
+
+        function showTooltip(field, message) {
+            var tooltip = getTooltipElement(field);
+
+            if (!tooltip) {
+                tooltip = document.createElement('div');
+                tooltip.className = 'field-validation-tooltip';
+                tooltip.setAttribute('role', 'alert');
+                tooltip.setAttribute('aria-live', 'polite');
+                field.parentNode.insertBefore(tooltip, field.nextSibling);
+                field._validationTooltip = tooltip;
+            }
+
+            tooltip.textContent = message;
+            tooltip.classList.add('is-visible');
+            field.classList.add('is-validation-invalid');
+            field.setAttribute('aria-invalid', 'true');
+        }
+
+        function validateEmailField(field, locale, showError) {
+            var valid = isValidEmail(field.value);
+            if (!valid) {
+                if (showError) {
+                    showTooltip(field, messages[locale].email);
+                }
+                return false;
+            }
+
+            removeTooltip(field);
+            return true;
+        }
+
+        function validateMessageField(field, locale, showError) {
+            var text = (field.value || '').trim();
+            var valid = text.length > 50 && countWords(text) >= 10;
+            if (!valid) {
+                if (showError) {
+                    showTooltip(field, messages[locale].message);
+                }
+                return false;
+            }
+
+            removeTooltip(field);
+            return true;
+        }
+
+        forms.forEach(function (form) {
+            var locale = resolveLocale();
+            var emailField = form.querySelector('input[name="email"]');
+            var messageField = form.querySelector('textarea[name="message"]');
+
+            form.noValidate = true;
+
+            function validateField(field) {
+                if (!field) {
+                    return true;
+                }
+
+                if (field === emailField) {
+                    return validateEmailField(field, locale, true);
+                }
+
+                if (field === messageField) {
+                    return validateMessageField(field, locale, true);
+                }
+
+                return true;
+            }
+
+            function refreshField(field) {
+                if (!field) {
+                    return;
+                }
+
+                if (field === emailField) {
+                    validateEmailField(field, locale, false);
+                }
+
+                if (field === messageField) {
+                    validateMessageField(field, locale, false);
+                }
+            }
+
+            if (emailField) {
+                emailField.addEventListener('input', function () {
+                    refreshField(emailField);
+                });
+                emailField.addEventListener('blur', function () {
+                    validateField(emailField);
+                });
+            }
+
+            if (messageField) {
+                messageField.addEventListener('input', function () {
+                    refreshField(messageField);
+                });
+                messageField.addEventListener('blur', function () {
+                    validateField(messageField);
+                });
+            }
+
+            form.addEventListener('submit', function (event) {
+                var emailValid = true;
+                var messageValid = true;
+
+                if (emailField) {
+                    emailValid = validateField(emailField);
+                }
+
+                if (messageField) {
+                    messageValid = validateField(messageField);
+                }
+
+                if (!emailValid || !messageValid) {
+                    event.preventDefault();
+
+                    if (!emailValid && emailField) {
+                        emailField.focus();
+                    } else if (!messageValid && messageField) {
+                        messageField.focus();
+                    }
+                }
+            });
+        });
+    })();
+
+    /*------------------
         Smooth Scroll
     --------------------*/
     $('.mainmenu ul li a[href*="#"]').on('click', function (e) {

@@ -3688,6 +3688,26 @@ body.fb-widget-modal-open {
   flex: 0 0 auto;
 }
 
+.contact-form .field-validation-tooltip {
+  display: none;
+  margin: -18px 0 16px;
+  padding: 10px 12px;
+  background: var(--brand-color);
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1.4;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.contact-form .field-validation-tooltip.is-visible {
+  display: block;
+}
+
+.contact-form .is-validation-invalid {
+  border-color: var(--brand-color) !important;
+  box-shadow: 0 0 0 2px rgba(123, 36, 28, 0.12);
+}
+
 /* .contact-form .captcha-scale-wrap .g-recaptcha {
   transform: scale(0.596);
   transform-origin: left top;
