@@ -1519,9 +1519,7 @@ h2 {
 }
 
 @media (max-width: 991px) {
-  .header-section .menu-item .nav-menu .bk-btn,
-  .header-section .menu-item .nav-menu .language-option,
-  .header-section .menu-item .nav-menu #fb-widget-1 {
+  .header-section .menu-item .nav-menu {
     display: none !important;
   }
 
@@ -1576,12 +1574,20 @@ h2 {
     background: var(--brand-color);
     color: #ffffff;
     text-align: center;
-    padding: 12px;
+    padding: 2px 12px;
     border-radius: 4px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 14px;
+  }
+
+  .mobile-sticky-banner .ms-book a.show-modal,
+  .mobile-sticky-banner .ms-book .show-modal[data-v-4c249c03] {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
 
   .mobile-sticky-banner .ms-call {
@@ -2594,8 +2600,10 @@ body.room-modal-open {
   overflow: hidden;
 }
 
+html.fb-widget-modal-open,
 body.fb-widget-modal-open {
   overflow: hidden;
+  height: 100%;
 }
 
 .room-detail-modal {
@@ -4567,7 +4575,7 @@ body.fb-widget-modal-open {
 /* -------------------
     Calendar Widget 
    ------------------- */
-#fb-widget-1 > div {
+.fb-widget.top-btn > div {
   display: inline-block;
 }
 .modal-container {
@@ -4608,6 +4616,77 @@ div:has(> a.next--button) {
 .closing-cross{
   top: 10px !important;
   right: 10px !important;
+}
+
+/* Apply booking field styles on all breakpoints. */
+.fbw-calendar--main .config-item {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0;
+  justify-self: stretch !important;
+  padding: 0;
+  border: 0;
+}
+
+.fbw-calendar--main .config-item select,
+.fbw-calendar--main .config-item input {
+  box-sizing: border-box;
+  width: 100%;
+  display: block;
+  height: 50px;
+  border: 1px solid #ebebeb;
+  border-radius: 2px;
+  background: #ffffff;
+  padding: 0 42px 0 20px;
+  font-size: 16px;
+  color: #19191a;
+  font-weight: 500;
+}
+
+.fbw-calendar--main .config-item select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: none;
+}
+
+.fbw-calendar--main .config-item .nice-select {
+  border-radius: 2px;
+  border: 1px solid #ebebeb;
+  height: 50px;
+  line-height: 50px;
+  outline: none;
+  padding-left: 20px;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0;
+  display: block;
+  float: none;
+  margin: 0;
+  background: #ffffff;
+}
+
+.fbw-calendar--main .config-item .nice-select:after {
+  border-bottom: 2px solid var(--brand-color);
+  border-right: 2px solid var(--brand-color);
+  height: 10px;
+  margin-top: 0;
+  right: 20px;
+  width: 10px;
+  top: 36%;
+}
+
+.fbw-calendar--main .config-item .nice-select span.current {
+  font-size: 16px;
+  color: #19191a;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 50px;
+}
+
+.fbw-calendar--main .config-item .nice-select .list {
+  margin-top: 0;
+  width: 100%;
 }
 
 @media only screen and (max-width: 991px) {
@@ -4840,5 +4919,65 @@ div:has(> a.next--button) {
   .fbw-calendar--config,
   .fbw-calendar--dates.layout1-version.desktop {
     display: block;
+  }
+}
+
+@media (max-width: 665px) {
+  .fbw-calendar--main .fbw-calendar--config {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 10px !important;
+  }
+
+  .fbw-calendar--main .config-item,
+  .fbw-calendar--main .config--adult,
+  .fbw-calendar--main .config--child,
+  .fbw-calendar--main .config--promo {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 8px !important;
+    padding: 0 !important;
+  }
+
+  .fbw-calendar--main .config-item label,
+  .fbw-calendar--main .fbw-calendar--dates.layout1-version.desktop .fbw-calendar--label {
+    font-size: 12px !important;
+    margin-bottom: 3px !important;
+    letter-spacing: 0.5px;
+    line-height: 1.25;
+  }
+
+  .fbw-calendar--main .config-item:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .fbw-calendar--main .config-item select,
+  .fbw-calendar--main .config-item input,
+  .fbw-calendar--main .config-item .nice-select {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    display: block;
+    height: 42px !important;
+    line-height: 42px !important;
+    font-size: 14px !important;
+  }
+
+  .fbw-calendar--main .config-item select,
+  .fbw-calendar--main .config-item input {
+    padding: 0 36px 0 14px !important;
+  }
+
+  .fbw-calendar--main .config-item .nice-select {
+    padding-left: 14px !important;
+  }
+
+  .fbw-calendar--main .config-item .nice-select:after {
+    right: 14px !important;
+    width: 8px !important;
+    height: 8px !important;
+    top: 39% !important;
   }
 }

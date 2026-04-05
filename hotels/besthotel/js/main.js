@@ -507,13 +507,16 @@
             return;
         }
 
-        var host = document.getElementById('fb-widget-1');
-        if (!host) {
+        var hosts = Array.prototype.slice.call(
+            document.querySelectorAll('#fb-widget-1, #fb-widget-2, .fb-widget')
+        );
+
+        if (!hosts.length) {
             return;
         }
 
         function applyNiceSelectToWidget(root) {
-            var $root = root ? $(root) : $(host);
+            var $root = $(root);
             var $widgetSelects = $root.find('.fbw-calendar--config select');
 
             if (!$widgetSelects.length) {
@@ -538,46 +541,48 @@
             });
         }
 
-        applyNiceSelectToWidget();
+        hosts.forEach(function (host) {
+            applyNiceSelectToWidget(host);
 
-        var observer = new MutationObserver(function (mutations) {
-            var shouldRefresh = false;
+            var observer = new MutationObserver(function (mutations) {
+                var shouldRefresh = false;
 
-            for (var i = 0; i < mutations.length; i++) {
-                var mutation = mutations[i];
-                if (!mutation.addedNodes || !mutation.addedNodes.length) {
-                    continue;
-                }
-
-                for (var j = 0; j < mutation.addedNodes.length; j++) {
-                    var node = mutation.addedNodes[j];
-                    if (!(node instanceof Element)) {
+                for (var i = 0; i < mutations.length; i++) {
+                    var mutation = mutations[i];
+                    if (!mutation.addedNodes || !mutation.addedNodes.length) {
                         continue;
                     }
 
-                    if (
-                        node.matches('select') ||
-                        node.matches('.fbw-calendar--config') ||
-                        node.querySelector('.fbw-calendar--config select')
-                    ) {
-                        shouldRefresh = true;
+                    for (var j = 0; j < mutation.addedNodes.length; j++) {
+                        var node = mutation.addedNodes[j];
+                        if (!(node instanceof Element)) {
+                            continue;
+                        }
+
+                        if (
+                            node.matches('select') ||
+                            node.matches('.fbw-calendar--config') ||
+                            node.querySelector('.fbw-calendar--config select')
+                        ) {
+                            shouldRefresh = true;
+                            break;
+                        }
+                    }
+
+                    if (shouldRefresh) {
                         break;
                     }
                 }
 
                 if (shouldRefresh) {
-                    break;
+                    applyNiceSelectToWidget(host);
                 }
-            }
+            });
 
-            if (shouldRefresh) {
-                applyNiceSelectToWidget(host);
-            }
-        });
-
-        observer.observe(host, {
-            childList: true,
-            subtree: true
+            observer.observe(host, {
+                childList: true,
+                subtree: true
+            });
         });
     })();
 
@@ -585,9 +590,47 @@
         D-edge widget modal -> lock page scroll
     --------------------*/
     (function initWidgetModalScrollLock() {
-        var host = document.getElementById('fb-widget-1');
-        if (!host) {
+        var hosts = Array.prototype.slice.call(
+            document.querySelectorAll('#fb-widget-1, #fb-widget-2, .fb-widget')
+        );
+
+        if (!hosts.length) {
             return;
+        }
+
+        var isLocked = false;
+        var savedScrollY = 0;
+
+        function setScrollLock(shouldLock) {
+            if (shouldLock && !isLocked) {
+                savedScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+
+                document.body.classList.add('fb-widget-modal-open');
+                document.documentElement.classList.add('fb-widget-modal-open');
+
+                document.body.style.position = 'fixed';
+                document.body.style.top = '-' + savedScrollY + 'px';
+                document.body.style.left = '0';
+                document.body.style.right = '0';
+                document.body.style.width = '100%';
+
+                isLocked = true;
+                return;
+            }
+
+            if (!shouldLock && isLocked) {
+                document.body.classList.remove('fb-widget-modal-open');
+                document.documentElement.classList.remove('fb-widget-modal-open');
+
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.left = '';
+                document.body.style.right = '';
+                document.body.style.width = '';
+
+                window.scrollTo(0, savedScrollY);
+                isLocked = false;
+            }
         }
 
         function isElementVisible(node) {
@@ -609,35 +652,43 @@
         }
 
         function updateBodyScrollLock() {
-            var masks = host.querySelectorAll('.modal-mask');
             var isOpen = false;
 
-            for (var i = 0; i < masks.length; i++) {
-                if (isElementVisible(masks[i])) {
-                    isOpen = true;
+            for (var i = 0; i < hosts.length; i++) {
+                var masks = hosts[i].querySelectorAll('.modal-mask');
+                for (var j = 0; j < masks.length; j++) {
+                    if (isElementVisible(masks[j])) {
+                        isOpen = true;
+                        break;
+                    }
+                }
+
+                if (isOpen) {
                     break;
                 }
             }
 
-            document.body.classList.toggle('fb-widget-modal-open', isOpen);
+            setScrollLock(isOpen);
         }
 
         updateBodyScrollLock();
 
-        var observer = new MutationObserver(function () {
-            updateBodyScrollLock();
-        });
+        hosts.forEach(function (host) {
+            var observer = new MutationObserver(function () {
+                updateBodyScrollLock();
+            });
 
-        observer.observe(host, {
-            childList: true,
-            subtree: true,
-            attributes: true,
-            attributeFilter: ['class', 'style']
-        });
+            observer.observe(host, {
+                childList: true,
+                subtree: true,
+                attributes: true,
+                attributeFilter: ['class', 'style']
+            });
 
-        host.addEventListener('click', function () {
-            setTimeout(updateBodyScrollLock, 0);
-        }, true);
+            host.addEventListener('click', function () {
+                setTimeout(updateBodyScrollLock, 0);
+            }, true);
+        });
 
         document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') {
