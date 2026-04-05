@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Redirecting...</title>
+    <script>
+        (function () {
+            'use strict';
+
+            var fallback = './en/index.html';
+            var language = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            var target = language.indexOf('fr') === 0 ? './fr/index.html' : fallback;
+
+            window.location.replace(target);
+        })();
+    </script>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=./en/index.html">
+    </noscript>
+</head>
+<body>
+    <p>Redirecting to your language version...</p>
+    <p>If nothing happens, <a href="/en/index.html">go to English</a> or <a href="/fr/index.html">go to French</a>.</p>
+</body>
+</html>

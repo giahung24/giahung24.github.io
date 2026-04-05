@@ -4981,3 +4981,142 @@ div:has(> a.next--button) {
     top: 39% !important;
   }
 }
+
+/* -------------------
+    Coming Soon Page
+   ------------------- */
+
+body.coming-soon-page {
+  padding-top: 0 !important;
+}
+
+.coming-soon-page .coming-soon-hero {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.coming-soon-page .hero-slider .hs-item.set-bg::after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.coming-soon-panel {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 8px;
+  padding: 44px 36px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+}
+
+.coming-soon-logo {
+  display: block;
+  margin: 0 auto 20px;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: var(--brand-color-lighter);
+  color: var(--brand-color);
+}
+
+.coming-soon-panel h1 {
+  color: #1f1f1f;
+  font-size: 58px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.coming-soon-panel p {
+  font-size: 19px;
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin-bottom: 24px;
+}
+
+.coming-soon-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.coming-soon-link {
+  color: #2f2f2f;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.coming-soon-link:hover,
+.coming-soon-link:focus {
+  color: var(--brand-color);
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 991px) {
+  .coming-soon-page .coming-soon-hero {
+    min-height: calc(100vh - 72px);
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .coming-soon-panel {
+    padding: 34px 22px;
+  }
+
+  .coming-soon-panel h1 {
+    font-size: 44px;
+  }
+
+  .coming-soon-panel p {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .coming-soon-page .coming-soon-hero {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .coming-soon-panel {
+    padding: 28px 16px;
+  }
+
+  .coming-soon-panel h1 {
+    font-size: 36px;
+  }
+
+  .coming-soon-panel p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
