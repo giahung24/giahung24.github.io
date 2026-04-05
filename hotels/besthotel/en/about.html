@@ -51,6 +51,7 @@
   <link rel="alternate" hreflang="fr" href="https://besthotelbordeauxsud.fr/fr/about.html" />
   <link rel="alternate" hreflang="x-default" href="https://besthotelbordeauxsud.fr/en/about.html" />
   <link rel="stylesheet" property="stylesheet" href="https://websdk.d-edge.com/widgets/app.css" />
+  <script src="https://www.google.com/recaptcha/enterprise.js?hl=en" async defer></script>
 
   <script type="application/ld+json">
       {
@@ -345,6 +346,31 @@
                   </p>
                 </div>
               </div>
+            </li>
+            <hr />
+            <li>
+              <h3 class="mb-4">Contact Us</h3>
+              <form action="https://api.staticforms.dev/submit" class="contact-form" method="POST">
+                <input type="hidden" name="apiKey" value="sf_60580f5e0f276430fff17821">
+                <input type="text" name="honeypot" style="display:none">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <input type="text" id="name" name="name" placeholder="Your Name">
+                  </div>
+                  <div class="col-lg-6">
+                    <input type="text" id="email" name="email" placeholder="Your Email">
+                  </div>
+                  <div class="col-lg-12">
+                    <textarea id="message" name="message" placeholder="Your Message"></textarea>
+                    <div class="captcha-submit-row">
+                      <div class="captcha-scale-wrap">
+                        <div class="g-recaptcha" data-sitekey="6Lc_HqgsAAAAAAwfWl7gQ94kaeKKt5kgecKmo8EY" data-action="LOGIN"></div>
+                      </div>
+                      <button type="submit">Send</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </li>
             <hr />
             <li>

@@ -3608,7 +3608,7 @@ body.fb-widget-modal-open {
   height: 50px;
   border: 1px solid #e1e1e1;
   font-size: 16px;
-  color: #aaaab3;
+  color: #2d2d2d;
   padding-left: 25px;
   margin-bottom: 28px;
 }
@@ -3638,7 +3638,7 @@ body.fb-widget-modal-open {
   height: 150px;
   border: 1px solid #e1e1e1;
   font-size: 16px;
-  color: #aaaab3;
+  color: #2d2d2d;
   padding-left: 25px;
   padding-top: 12px;
   margin-bottom: 33px;
@@ -3675,6 +3675,28 @@ body.fb-widget-modal-open {
   border: none;
   padding: 14px 34px 13px;
   display: inline-block;
+}
+
+.contact-form .captcha-submit-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-form .captcha-scale-wrap {
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
+/* .contact-form .captcha-scale-wrap .g-recaptcha {
+  transform: scale(0.596);
+  transform-origin: left top;
+} */
+
+@media only screen and (max-width: 575px) {
+  .contact-form .captcha-submit-row {
+    flex-wrap: wrap;
+  }
 }
 
 .map {
