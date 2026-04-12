@@ -4,55 +4,122 @@
     "title": "Double Room",
     "price": 53,
     "size": "11 m2",
-    "bed": "1 double bed",
-    "capacity": 2,
-    "description": "This air-conditioned double room has a flat-screen TV with cable channels and a private bathroom. Ideal for couples and short city stays.",
-    "chips": ["Air conditioning", "Private bathroom", "Flat-screen TV", "Free WiFi", "Soundproofing"],
-    "bathroom": ["Shower", "Toilet", "Toilet paper", "Hairdryer"],
-    "facilities": ["Desk", "TV", "Cable channels", "Heating", "Soundproofing", "Wardrobe or closet", "Socket near the bed", "Wake-up service"],
-    "smoking": "No smoking",
-    "images": ["../img/room/room--1.jpg", "../img/room/room-1.jpg", "../img/room/room-b1.jpg", "../img/room/room-details.jpg"]
+    "bed": "1 double bed (140 cm)",
+    "capacity": "2 adults",
+    "description": "Comfort and simplicity for your stay as a couple. This double room is ideal for a comfortable stay, whether you're here on business or enjoying a getaway in Bordeaux. Designed to combine practicality with comfort, it offers everything you need for a restful night's sleep in a calm and functional setting.",
+    "chips": [
+      "Air conditioning",
+      "Flat-screen TV",
+      "Free WiFi"
+    ],
+    "bathroom": [
+      "Shower",
+      "Toilet",
+      "Sink"
+    ],
+    "facilities": [
+      "Non-smoking room",
+      "Desk",
+      "Flat-screen TV",
+      "Canal+",
+      "Unlimited free Wi-Fi",
+      "Wardrobe/storage space"
+    ],
+    "images": [
+      "../img/room/room--1.webp"
+    ]
   },
   "double-twin-room": {
     "roomId": "86040",
     "title": "Double/Twin Room",
     "price": 60,
     "size": "11 m2",
-    "bed": "1 large double bed or 2 single beds",
-    "capacity": 2,
-    "description": "Designed for couples and business trips, this air-conditioned room offers flexible bedding, private bathroom, and a flat-screen TV.",
-    "chips": ["Air conditioning", "Private bathroom", "Flat-screen TV", "Free WiFi", "Soundproofing"],
-    "bathroom": ["Shower", "Toilet", "Toilet paper", "Towels"],
-    "facilities": ["Desk", "TV", "Cable channels", "Heating", "Soundproofing", "Wardrobe or closet", "Linen", "Single-room air conditioning"],
-    "smoking": "No smoking",
-    "images": ["../img/room/room--2.jpg", "../img/room/room-2.jpg", "../img/room/room-b2.jpg", "../img/room/room-details.jpg"]
+    "bed": "2 single beds",
+    "capacity": "2 adults",
+    "description": "Comfort and convenience with twin beds. This double/twin room is ideal for couples or groups of two, whether for a business trip, a break with colleagues or a holiday with friends. Functional and comfortable, it guarantees you a good night's sleep in a quiet and pleasant setting.",
+    "chips": [
+      "Air conditioning",
+      "Flat-screen TV",
+      "Free WiFi"
+    ],
+    "bathroom": [
+      "Shower",
+      "Toilet",
+      "Sink"
+    ],
+    "facilities": [
+      "Non-smoking room",
+      "Desk",
+      "Flat-screen TV",
+      "Canal+",
+      "Unlimited free Wi-Fi",
+      "Wardrobe/storage space"
+    ],
+    "images": [
+      "../img/room/room--2.webp"
+    ]
   },
   "prm-room": {
     "roomId": "85494",
     "title": "Double Room - PRM Access",
     "price": 80,
     "size": "20 m2",
-    "bed": "1 double bed",
-    "capacity": 2,
-    "description": "Located on the ground floor, this spacious and fully wheelchair-accessible double room features hardwood floors, a private bathroom adapted for PRM access, and modern amenities for a comfortable, barrier-free stay.",
-    "chips": ["PRM", "Air conditioning", "Private bathroom", "Flat-screen TV", "Free WiFi", "Soundproofing"],
-    "bathroom": ["Shower", "Toilet", "Toilet paper"],
-    "facilities": ["Desk", "TV", "Linen", "Hardwood or parquet floors", "Entire unit located on ground floor", "Flat-screen TV", "Wake-up service", "Single-room air conditioning", "Heating", "Cable channels", "Towels", "Wardrobe or closet", "Entire unit wheelchair accessible", "Socket near the bed"],
-    "smoking": "No smoking",
-    "images": ["../img/room/room--3.jpg", "../img/room/room-3.jpg", "../img/room/room-b3.jpg", "../img/room/room-details.jpg"]
+    "bed": "1 double bed (140 cm)",
+    "capacity": "2 adults",
+    "description": "Easy access and optimised layout, with facilities designed for greater comfort and safety. This double room for guests with reduced mobility is specially equipped to ensure that all our guests can enjoy a pleasant stay in complete independence. It is ideal for a couple, combining comfort, simplicity and accessibility.",
+    "chips": [
+      "PRM",
+      "Air conditioning",
+      "Flat-screen TV",
+      "Free WiFi"
+    ],
+    "bathroom": [
+      "Accessible to PRM",
+      "Accessible shower",
+      "Handrail",
+      "Toilet",
+      "Sink"
+    ],
+    "facilities": [
+      "Non-smoking room",
+      "Desk",
+      "Flat-screen TV",
+      "Canal+",
+      "Unlimited free Wi-Fi",
+      "Wardrobe/storage space"
+    ],
+    "images": [
+      "../img/room/room--3.webp"
+    ]
   },
   "triple-room": {
     "roomId": "86029",
     "title": "Triple Room",
     "price": 80,
     "size": "18 m2",
-    "bed": "1 single bed and 1 double bed",
-    "capacity": 3,
-    "description": "Spacious and practical for families or small groups with quality bedding, private bathroom, flat-screen TV, and modern in-room comfort.",
-    "chips": ["Air conditioning", "Private bathroom", "Flat-screen TV", "Free WiFi", "Soundproofing"],
-    "bathroom": ["Shower", "Toilet", "Toilet paper", "Towels"],
-    "facilities": ["Desk", "TV", "Cable channels", "Heating", "Soundproofing", "Wardrobe or closet", "Linen", "Wake-up service"],
-    "smoking": "No smoking",
-    "images": ["../img/room/room--4.jpg", "../img/room/room-4.jpg", "../img/room/room-b4.jpg", "../img/room/room-details.jpg"]
+    "bed": "1 double bed (140 cm) and 2 single beds (or adapted bedding according to configuration)",
+    "capacity": "4 adults",
+    "description": "The ideal choice for a family stay. This family room is designed to accommodate up to four people in a comfortable, practical and welcoming space. Perfect for families, groups of friends or business trips with colleagues, it allows you to share the same space whilst maintaining your comfort.",
+    "chips": [
+      "Air conditioning",
+      "Flat-screen TV",
+      "Free WiFi"
+    ],
+    "bathroom": [
+      "Shower",
+      "Toilet",
+      "Sink"
+    ],
+    "facilities": [
+      "Non-smoking room",
+      "Desk",
+      "Flat-screen TV",
+      "Canal+",
+      "Unlimited free Wi-Fi",
+      "Wardrobe/storage space"
+    ],
+    "images": [
+      "../img/room/room--4.webp"
+    ]
   }
 }

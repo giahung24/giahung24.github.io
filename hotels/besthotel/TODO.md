@@ -1,8 +1,9 @@
-## Réclamer google map
-- corriger le lien du site (besthotel.fr)
-
-
 # My TODO
+
+## Ajouter dans footer
+- conditions-generales-vente https://hotel-formuleclub.fr/conditions-generales-vente
+- politique-confidentialite  https://hotel-formuleclub.fr/politique-confidentialite
+
 ## UI elements 
 
 ## Double check real site domain in contact ìnfo
@@ -14,19 +15,4 @@
 ## D-Edge booking page 
 - Changer logo, contact info, website url
 
-## Reservation link (DONE)
 
-### Custom room without date (Book button on each room)
-https://www.secure-hotel-booking.com/d-edge/Best-Hotel-Bordeaux-Sud/J6VH/fr-FR/DateSelection?roomAction=Highlight&roomId={ROOM_ID}&currency=EUR
-
-- Double
-    - roomId: 85273
-- Twin
-    - roomId: 86040
-- PMR
-    - roomId: 85494
-- Triple
-    - roomId: 86029
-
-### Custom dates without room (booking form on homepage)
-https://www.secure-hotel-booking.com/d-edge/Best-Hotel-Bordeaux-Sud/J6VH/fr-FR/?arrivalDate=2026-04-06&departureDate=2026-04-07&roomAction=Highlight&roomId=86029&selectedAdultCount=1&currency=EUR

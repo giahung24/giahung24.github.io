@@ -218,7 +218,6 @@
         var $description = $('#roomDetailDescription');
         var $bathroom = $('#roomDetailBathroom');
         var $facilities = $('#roomDetailFacilities');
-        var $smoking = $('#roomDetailSmoking');
         var $bookButton = $('#roomBookButton');
         var $closeButton = $modal.find('.room-detail-modal__close');
         var lastFocusedElement = null;
@@ -302,8 +301,7 @@
             $bed.text(room.bed || '');
             $capacity.text(room.capacity != null ? String(room.capacity) : '0');
             $description.text(room.description || '');
-            $smoking.text(room.smoking || '');
-
+            
             buildChips(room.chips);
             buildList($bathroom, room.bathroom);
             buildList($facilities, room.facilities);

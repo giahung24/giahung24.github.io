@@ -3,161 +3,122 @@
     "roomId": "85273",
     "title": "Chambre Double",
     "size": "11 m2",
-    "bed": "1 lit double",
-    "description": "Cette chambre double climatisée dispose d'une télévision à écran plat avec chaînes câblées et d'une salle de bains privative. Idéale pour les couples et les courts séjours en ville.",
+    "bed": "1 lit double (140 cm)",
+    "description": "Confort et simplicité pour vos séjours à deux. Cette chambre double est idéale pour un séjour confortable, que ce soit pour un déplacement professionnel ou une escapade à Bordeaux. Pensée pour allier praticité et bien-être, elle vous offre tout le nécessaire pour une nuit reposante dans un environnement calme et fonctionnel.",
     "price": 53,
-    "capacity": 2,
+    "capacity": "2 adultes",
     "chips": [
       "Climatisation",
-      "Salle de bains privée",
       "TV écran plat",
-      "Wi-Fi gratuit",
-      "Insonorisation"
+      "Wi-Fi gratuit"
     ],
     "bathroom": [
       "Douche",
-      "Toilettes",
-      "Papier toilette",
-      "Sèche-cheveux"
+      "WC",
+      "Lavabo"
     ],
     "facilities": [
-      "Bureau",
-      "TV",
-      "Chaînes câblées",
-      "Chauffage",
-      "Insonorisation",
-      "Armoire ou penderie",
-      "Prise près du lit",
-      "Service de réveil"
+      "Chambre non-fumeur",
+      "Bureau de travail",
+      "TV écran plat",
+      "Canal+",
+      "Penderie / espace de rangement",
+      "Wifi gratuit illimité"
     ],
-    "smoking": "Non-fumeur",
     "images": [
-      "../img/room/room--1.jpg",
-      "../img/room/room-1.jpg",
-      "../img/room/room-b1.jpg",
-      "../img/room/room-details.jpg"
+      "../img/room/room--1.webp"
     ]
   },
   "double-twin-room": {
     "roomId": "86040",
     "title": "Chambre Double/Twin",
     "size": "11 m2",
-    "bed": "1 lit queen-size ou 2 lits simples",
-    "description": "Conçue pour les couples et les voyages d'affaires, cette chambre climatisée propose une literie modulable, une salle de bains privative et une télévision à écran plat.",
+    "bed": "2 lits simples",
+    "description": "Confort et praticité avec lits séparés. Cette chambre double/twin est idéale pour les séjours à deux avec lits séparés, que ce soit pour un déplacement professionnel, un séjour entre collègues ou entre amis. Fonctionnelle et confortable, elle vous garantit un repos optimal dans un environnement calme et agréable.",
     "price": 60,
-    "capacity": 2,
+    "capacity": "2 adultes",
     "chips": [
       "Climatisation",
-      "Salle de bains privée",
       "TV écran plat",
-      "Wi-Fi gratuit",
-      "Insonorisation"
+      "Wi-Fi gratuit"
     ],
     "bathroom": [
       "Douche",
-      "Toilettes",
-      "Papier toilette",
-      "Serviettes"
+      "WC",
+      "Lavabo"
     ],
     "facilities": [
-      "Bureau",
-      "TV",
-      "Chaînes câblées",
-      "Chauffage",
-      "Insonorisation",
-      "Armoire ou penderie",
-      "Linge de lit",
-      "Climatisation individuelle"
+      "Chambre non-fumeur",
+      "Bureau de travail",
+      "TV écran plat",
+      "Wifi gratuit illimité",
+      "Penderie / espace de rangement"
     ],
-    "smoking": "Non-fumeur",
     "images": [
-      "../img/room/room--2.jpg",
-      "../img/room/room-2.jpg",
-      "../img/room/room-b2.jpg",
-      "../img/room/room-details.jpg"
+      "../img/room/room--2.webp"
     ]
   },
   "prm-room": {
     "roomId": "85494",
-    "title": "Chambre Double - Accès PMR",
+    "title": "Chambre Double - PMR",
     "size": "20 m2",
-    "bed": "1 lit double",
-    "capacity": 2,
-    "description": "Située au rez-de-chaussée, cette chambre double spacieuse est entièrement accessible aux personnes à mobilité réduite. Elle dispose d'un parquet élégant, d'une salle de bain adaptée et de tout le confort moderne pour un séjour sans barrière.",
+    "bed": "1 lit double (140 cm)",
+    "capacity": "2 adultes",
+    "description": "Accès facilité et circulation optimisée, equipements pensés pour plus de confort et de sécurité. Cette chambre double PMR est spécialement aménagée pour les personnes à mobilité réduite (PMR), afin de garantir un séjour agréable à tous nos clients, en toute autonomie. Elle est idéale pour un séjour à deux, alliant confort, simplicité et accessibilité.",
     "price": 80,
     "chips": [
+      "PMR",
       "Climatisation",
-      "Salle de bains privée",
       "TV écran plat",
-      "Wi-Fi gratuit",
-      "Insonorisation"
+      "Wi-Fi gratuit"
     ],
     "bathroom": [
-      "Douche",
-      "Toilettes",
-      "Papier toilette"
+      "Aménagé PMR",
+      "Douche accessible",
+      "Barre de maintien",
+      "WC",
+      "Lavabo"
     ],
     "facilities": [
-      "Bureau",
-      "TV",
-      "Linge de lit",
-      "Parquet",
-      "Logement entier en rez-de-chaussée",
+      "Chambre non-fumeur",
+      "Bureau de travail",
       "TV écran plat",
-      "Service de réveil",
-      "Climatisation individuelle",
-      "Chauffage",
-      "Chaînes câblées",
-      "Serviettes",
-      "Armoire ou penderie",
-      "Logement entier accessible en fauteuil roulant",
-      "Prise près du lit"
+      "Canal+",
+      "Penderie / espace de rangement",
+      "Wifi gratuit illimité"
     ],
-    "smoking": "Non-fumeur",
     "images": [
-      "../img/room/room--3.jpg",
-      "../img/room/room-3.jpg",
-      "../img/room/room-b3.jpg",
-      "../img/room/room-details.jpg"
+      "../img/room/room--3.webp"
     ]
   },
   "triple-room": {
     "roomId": "86029",
     "title": "Chambre Triple",
     "size": "18 m2",
-    "bed": "1 lit simple et 1 lit double",
-    "capacity": 3,
+    "bed": "1 lit double (140 cm) et 2 lits simples (ou couchages adaptés selon configuration)",
+    "capacity": "4 adultes",
     "price": 80,
-    "description": "Spacieuse et pratique pour les familles ou petits groupes, avec literie de qualité, salle de bains privative, télévision écran plat et confort moderne.",
+    "description": "Le choix idéal pour séjourner en famille. Cette chambre familiale est conçue pour accueillir jusqu'à 4 personnes dans un espace confortable, pratique et convivial. Parfaite pour les familles, groupes d'amis ou séjours professionnels à plusieurs, elle vous permet de partager un même espace tout en conservant votre confort.",
     "chips": [
       "Climatisation",
-      "Salle de bains privée",
       "TV écran plat",
-      "Wi-Fi gratuit",
-      "Insonorisation"
+      "Wi-Fi gratuit"
     ],
     "bathroom": [
       "Douche",
-      "Toilettes",
-      "Papier toilette",
-      "Serviettes"
+      "WC",
+      "Lavabo"
     ],
     "facilities": [
-      "Bureau",
-      "TV",
-      "Chaînes câblées",
-      "Chauffage",
-      "Insonorisation",
-      "Armoire ou penderie",
-      "Linge de lit",
-      "Service de réveil"
+      "Chambre non-fumeur",
+      "Bureau de travail",
+      "TV écran plat",
+      "Canal+",
+      "Penderie / espace de rangement",
+      "Wifi gratuit illimité"
     ],
-    "smoking": "Non-fumeur",
     "images": [
-      "../img/room/room--4.jpg",
-      "../img/room/room-4.jpg",
-      "../img/room/room-b4.jpg",
-      "../img/room/room-details.jpg"
+      "../img/room/room--4.webp"
     ]
   }
 }

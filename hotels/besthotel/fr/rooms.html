@@ -100,22 +100,7 @@
       <i class="icon_close"></i>
     </div>
     <div id="mobile-menu-wrap">
-      <div class="slicknav_menu">
-        <a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed"
-          style="outline: none"><span class="slicknav_menutxt">MENU</span><span class="slicknav_icon"><span
-              class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span
-              class="slicknav_icon-bar"></span></span></a>
-        <nav class="slicknav_nav slicknav_hidden" aria-hidden="true" role="menu" style="display: none">
-          <ul>
-            <li><a href="./index.html" role="menuitem">Accueil</a></li>
-            <li><a href="./services.html" role="menuitem">Services</a></li>
-            <li class="active">
-              <a href="./rooms.html" role="menuitem">Chambres</a>
-            </li>
-            <li><a href="./about.html" role="menuitem">À propos</a></li>
-          </ul>
-        </nav>
-      </div>
+      <div class="slicknav_menu"></div>
     </div>
   </div>
   <!-- Offcanvas Menu Section End -->
@@ -133,32 +118,7 @@
             </div>
           </div>
           <div class="col-lg-10">
-            <div class="nav-menu">
-              <nav class="mainmenu">
-                <ul>
-                  <li><a href="./index.html">Accueil</a></li>
-                  <li><a href="./services.html">Services</a></li>
-                  <li class="active"><a href="./rooms.html">Chambres</a></li>
-                  <li><a href="./about.html">À propos</a></li>
-                </ul>
-              </nav>
-              <span id="fb-widget-1" class="fb-widget top-btn" data-fbConfig="0"></span>
-              <div class="language-option">
-                <!-- <img src="../img/flag-en.webp" alt=""> -->
-                <span class="current-lang">FR <i class="fa fa-angle-down"></i></span>
-                <div class="flag-dropdown">
-                  <ul>
-                    <li>
-                      <a href="../en/index.html" data-lang-switch="en">EN</a>
-                    </li>
-                    <li>
-                      <a href="../fr/index.html" data-lang-switch="fr">FR</a>
-                    </li>
-                    <!-- <li><a href="#">ES</a></li> -->
-                  </ul>
-                </div>
-              </div>
-            </div>
+            <div class="nav-menu"></div>
           </div>
         </div>
       </div>
@@ -210,11 +170,11 @@
                 <div class="col-lg-6">
                   <div class="ri-text room-showcase-content">
                     <h3 class="room-showcase-title">Chambre Double</h3>
-                    <p class="room-showcase-price">
+                    <!-- <p class="room-showcase-price">
                       <span class="room-showcase-label">À partir de</span>
                       <span class="room-showcase-amount"></span>
                       <span class="room-showcase-currency">EUR</span>
-                    </p>
+                    </p> -->
                     <p class="room-showcase-desc"></p>
                     <div class="room-showcase-actions">
                       <a href="#" class="primary-btn room-modal-trigger" data-room-id="double-room">+ Plus d'infos</a>
@@ -237,11 +197,11 @@
                 <div class="col-lg-6 order-lg-1">
                   <div class="ri-text room-showcase-content">
                     <h3 class="room-showcase-title">Chambre Double/Twin</h3>
-                    <p class="room-showcase-price">
+                    <!-- <p class="room-showcase-price">
                       <span class="room-showcase-label">À partir de</span>
                       <span class="room-showcase-amount"></span>
                       <span class="room-showcase-currency">EUR</span>
-                    </p>
+                    </p> -->
                     <p class="room-showcase-desc"></p>
                     <div class="room-showcase-actions">
                       <a href="#" class="primary-btn room-modal-trigger" data-room-id="double-twin-room">+ Plus
@@ -267,11 +227,11 @@
                     <h3 class="room-showcase-title">
                       Chambre Double - Accès PMR
                     </h3>
-                    <p class="room-showcase-price">
+                    <!-- <p class="room-showcase-price">
                       <span class="room-showcase-label">À partir de</span>
                       <span class="room-showcase-amount"></span>
                       <span class="room-showcase-currency">EUR</span>
-                    </p>
+                    </p> -->
                     <p class="room-showcase-desc"></p>
                     <div class="room-showcase-actions">
                       <a href="#" class="primary-btn room-modal-trigger" data-room-id="prm-room">+ Plus d'infos</a>
@@ -294,11 +254,11 @@
                 <div class="col-lg-6 order-lg-1">
                   <div class="ri-text room-showcase-content">
                     <h3 class="room-showcase-title">Chambre Triple</h3>
-                    <p class="room-showcase-price">
+                    <!-- <p class="room-showcase-price">
                       <span class="room-showcase-label">À partir de</span>
                       <span class="room-showcase-amount"></span>
                       <span class="room-showcase-currency">EUR</span>
-                    </p>
+                    </p> -->
                     <p class="room-showcase-desc"></p>
                     <div class="room-showcase-actions">
                       <a href="#" class="primary-btn room-modal-trigger" data-room-id="triple-room">+ Plus d'infos</a>
@@ -350,42 +310,30 @@
             alt="Photo de la chambre" />
           <div class="room-detail-modal__thumbs" id="roomDetailThumbs"></div>
         </div>
-
         <div class="room-detail-modal__content">
           <div class="room-detail-modal__header">
             <h3 id="roomDetailModalTitle">Détails de la chambre</h3>
             <a id="roomBookButton" href="#" class="bk-btn" target="_blank">Réserver</a>
           </div>
           <div class="room-detail-modal__chips" id="roomDetailChips"></div>
-
-          <p class="room-detail-modal__meta">
-            <strong>Superficie :</strong>
-            <span id="roomDetailSize"></span>
-          </p>
-          <p class="room-detail-modal__meta">
-            <strong>Nombre de personnes :</strong>
-            <span id="roomDetailCapacity"></span>
-          </p>
-          <p class="room-detail-modal__meta">
-            <strong>Type de lit :</strong>
-            <span id="roomDetailBed"></span>
-          </p>
           <p class="room-detail-modal__description" id="roomDetailDescription"></p>
-
           <div class="room-detail-modal__section">
-            <h4>Salle de bains</h4>
+            <h4>Équipements de la chambre</h4>
+            <p class="room-detail-modal__meta">
+              <strong>Type de lit :</strong>
+              <span id="roomDetailBed"></span>
+            </p>
+            <p class="room-detail-modal__meta">
+              <strong>Capacité maximale :</strong>
+              <span id="roomDetailCapacity"></span>
+            </p>
+            <ul id="roomDetailFacilities" class="room-detail-modal__list two-columns"></ul>
+          </div>
+          <div class="room-detail-modal__section">
+            <h4>Salle d'eau</h4>
             <ul id="roomDetailBathroom" class="room-detail-modal__list"></ul>
           </div>
 
-          <div class="room-detail-modal__section">
-            <h4>Équipements de la chambre</h4>
-            <ul id="roomDetailFacilities" class="room-detail-modal__list two-columns"></ul>
-          </div>
-
-          <p class="room-detail-modal__meta">
-            <strong>Tabac :</strong>
-            <span id="roomDetailSmoking"></span>
-          </p>
         </div>
       </div>
     </div>
@@ -394,49 +342,7 @@
   <script id="roomDetailData" type="application/json" src="./room-detail-data.json"></script>
 
   <!-- Footer Section Begin -->
-  <footer class="footer-section">
-    <div class="container">
-      <div class="footer-text">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="ft-about">
-              <div class="logo">
-                <a href="./index.html">
-                  <img src="../img/footer-logo.webp" alt="Best Hotel Bordeaux Sud footer logo" />
-                </a>
-              </div>
-              <!-- <div class="fa-social">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-tripadvisor"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-youtube-play"></i></a>
-              </div> -->
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="ft-contact">
-              <h6>Contactez-nous</h6>
-              <ul>
-                <li>
-                  <span><i aria-hidden="true" class="fa fa-phone"></i></span>
-                  <span>05 56 37 90 00</span>
-                </li>
-                <li>
-                  <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                  <span>contact@besthotelbordeauxsud.fr</span>
-                </li>
-                <li>
-                  <span><i aria-hidden="true" class="fa fa-map-marker"></i></span>
-                  <span>6 Rue Salvador Dali, 33140 Villenave-d'Ornon</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <footer class="footer-section"></footer>
   <!-- Footer Section End -->
   <!-- Mobile Sticky Banner Begin -->
   <div class="mobile-sticky-banner">
@@ -458,8 +364,8 @@
   </div>
   <!-- Mobile Sticky Banner End -->
 
-    <!-- Js Plugins -->
-    <script class="fb-widget-config" data-fbConfig="0" type="application/json">
+  <!-- Js Plugins -->
+  <script class="fb-widget-config" data-fbConfig="0" type="application/json">
     {
       "params": [
         {
@@ -509,14 +415,15 @@
       "baseHost": "https://websdk.d-edge.com"
     }
     </script>
-    <script type="text/javascript" src="https://websdk.d-edge.com/widgets/app.js" defer></script>
-    <script src="../js/jquery-3.3.1.min.js" defer></script>
+  <script type="text/javascript" src="https://websdk.d-edge.com/widgets/app.js" defer></script>
+  <script src="../js/jquery-3.3.1.min.js" defer></script>
   <script src="../js/bootstrap.min.js" defer></script>
   <script src="../js/jquery.magnific-popup.min.js" defer></script>
   <script src="../js/jquery.nice-select.min.js" defer></script>
   <script src="../js/jquery-ui.min.js" defer></script>
   <script src="../js/jquery.slicknav.js" defer></script>
   <script src="../js/owl.carousel.min.js" defer></script>
+  <script src="../js/nav-menu.js" defer></script>
   <script src="../js/lang-switcher.js" defer></script>
   <script src="../js/main.js" defer></script>
 </body>

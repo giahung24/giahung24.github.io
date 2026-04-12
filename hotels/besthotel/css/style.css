@@ -2770,17 +2770,17 @@ body.fb-widget-modal-open {
 }
 
 .room-detail-modal__meta {
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.35;
   margin-bottom: 8px;
   color: #222222;
 }
 
 .room-detail-modal__description {
-  font-size: 19px;
+  font-size: 17px;
   line-height: 1.5;
   color: #3a3a3a;
-  margin: 14px 0 18px;
+  margin: 14px 0 8px;
 }
 
 .room-detail-modal__section {
@@ -4344,17 +4344,17 @@ body.fb-widget-modal-open {
   }
 
   .room-detail-modal__content h3 {
-    font-size: 28px;
+    font-size: 26px;
     padding-right: 28px;
   }
 
   .room-detail-modal__meta,
   .room-detail-modal__description {
-    font-size: 17px;
+    font-size: 15px;
   }
 
   .room-detail-modal__section h4 {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .room-detail-modal__list li {
