@@ -1109,6 +1109,16 @@ h2 {
   margin-bottom: 10px;
 }
 
+.mb-0 {
+  margin-bottom: 0px;
+}
+.mb-5px {
+  margin-bottom: 5px;
+}
+.mb-35px {
+  margin-bottom: 35px;
+}
+
 .about-text p.s-para {
   margin-bottom: 35px;
 }

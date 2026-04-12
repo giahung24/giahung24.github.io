@@ -26,7 +26,7 @@
       "Wardrobe/storage space"
     ],
     "images": [
-      "../img/room/room--1.webp"
+      "../assets/img/room/room--1.webp"
     ]
   },
   "double-twin-room": {
@@ -56,7 +56,7 @@
       "Wardrobe/storage space"
     ],
     "images": [
-      "../img/room/room--2.webp"
+      "../assets/img/room/room--2.webp"
     ]
   },
   "prm-room": {
@@ -89,7 +89,7 @@
       "Wardrobe/storage space"
     ],
     "images": [
-      "../img/room/room--3.webp"
+      "../assets/img/room/room--3.webp"
     ]
   },
   "triple-room": {
@@ -119,7 +119,7 @@
       "Wardrobe/storage space"
     ],
     "images": [
-      "../img/room/room--4.webp"
+      "../assets/img/room/room--4.webp"
     ]
   }
 }

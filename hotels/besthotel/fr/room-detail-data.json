@@ -26,7 +26,7 @@
       "Wifi gratuit illimité"
     ],
     "images": [
-      "../img/room/room--1.webp"
+      "../assets/img/room/room--1.webp"
     ]
   },
   "double-twin-room": {
@@ -55,7 +55,7 @@
       "Penderie / espace de rangement"
     ],
     "images": [
-      "../img/room/room--2.webp"
+      "../assets/img/room/room--2.webp"
     ]
   },
   "prm-room": {
@@ -88,7 +88,7 @@
       "Wifi gratuit illimité"
     ],
     "images": [
-      "../img/room/room--3.webp"
+      "../assets/img/room/room--3.webp"
     ]
   },
   "triple-room": {
@@ -118,7 +118,7 @@
       "Wifi gratuit illimité"
     ],
     "images": [
-      "../img/room/room--4.webp"
+      "../assets/img/room/room--4.webp"
     ]
   }
 }

@@ -11,7 +11,7 @@ Voici les actions précises demandées :
    
 - [ ] 4.  Ajouter un onglet "Galerie photos" et utiliser les photos disponibles sur la page Instagram de l'hôtel.
    
-- [ ] 5.  Changer l'onglet "À propos" par "À propos de l'hôtel" et y insérer le contenu texte spécifié dans le tableau en pièce jointe.
+- [.] 5.  Changer l'onglet "À propos" par "À propos de l'hôtel" et y insérer le contenu texte spécifié dans le tableau en pièce jointe.
 
 **Contenu de l'onglet Services**
 
@@ -27,7 +27,8 @@ Voici les actions précises demandées :
 
 - [x] 10. Ajouter la liste des équipements dans le descriptif de la chambre, en utilisant la liste détaillée fournie dans le tableau en pièce jointe.
 
----------------------------------------------------------------------------------------------
+
+
 ## Retour pour Agathe
 ### Barre menu 
 - Le titre "À propos de l'hôtel" me semble un peu long et crée un déséquilibre visuel par rapport aux autres (Accueil, Chambres, Services). Que pensez-vous de le remplacer par "L'Hôtel" ?
@@ -36,3 +37,7 @@ Voici les actions précises demandées :
 - Photo pour Chambre TWIN et Chambre PMR 
 - Configuration de la Chambre TWIN : toujours 2 lits simples ? Pas de Canal+ ? 
 - Toutes les chambres sont climatisées (en général) ?
+
+
+### A propos de l'hotel 
+- Vous pensez que les clients vont tous lire ? 
