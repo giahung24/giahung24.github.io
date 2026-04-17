@@ -2,6 +2,7 @@
   'use strict';
 
   var GALLERY_FOLDER = '../assets/img/gallery/';
+  var GALLERY_MANIFEST = GALLERY_FOLDER + 'gallery-manifest.json';
   var IMAGE_EXT_RE = /\.(jpg|jpeg|png|webp|avif|gif)$/i;
   var FALLBACK_EXTENSIONS = ['jpg', 'jpeg', 'webp', 'png', 'avif'];
   var MAX_INDEX_SCAN = 200;
@@ -136,6 +137,33 @@
 
       for (var i = 0; i < links.length; i += 1) {
         var fileName = normalizeFileName(links[i].getAttribute('href'));
+        if (fileName) {
+          files.push(fileName);
+        }
+      }
+
+      return uniqueSorted(files);
+    } catch (error) {
+      return [];
+    }
+  }
+
+  async function discoverFromManifest() {
+    try {
+      var response = await fetch(GALLERY_MANIFEST, { cache: 'no-store' });
+      if (!response.ok) {
+        return [];
+      }
+
+      var list = await response.json();
+      if (!Array.isArray(list)) {
+        return [];
+      }
+
+      var files = [];
+
+      for (var i = 0; i < list.length; i += 1) {
+        var fileName = normalizeFileName(String(list[i] || ''));
         if (fileName) {
           files.push(fileName);
         }
@@ -480,7 +508,11 @@
 
     setStatus(i18n.loading);
 
-    var files = await discoverFromDirectoryListing();
+    var files = await discoverFromManifest();
+
+    if (!files.length) {
+      files = await discoverFromDirectoryListing();
+    }
 
     if (!files.length) {
       files = await discoverFromPatternProbe();
