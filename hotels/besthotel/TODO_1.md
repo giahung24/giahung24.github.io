@@ -2,7 +2,7 @@ Voici les actions précises demandées :
 
 **Fonctionnalités et Page d'accueil**
 
-- [ ] 1.  Ajouter, si possible, un bouton "Réserver" flottant sur la page d'accueil, ou un bouton "sélectionner votre date pour voir nos tarifs".
+- [x] 1.  Ajouter, si possible, un bouton "Réserver" flottant sur la page d'accueil, ou un bouton "sélectionner votre date pour voir nos tarifs".
 - [ ] 2.  Modifier la photo de la page d'accueil, en envisageant un montage des deux photos présentes dans le tableau du hall d'accueil.
 
 **Structure et Navigation**

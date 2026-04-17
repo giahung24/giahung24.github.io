@@ -5,6 +5,7 @@
     { key: 'index', label: { fr: 'Accueil', en: 'Home' }, href: './index.html' },
     { key: 'rooms', label: { fr: 'Chambres', en: 'Rooms' }, href: './rooms.html' },
     { key: 'services', label: { fr: 'Services', en: 'Services' }, href: './services.html' },
+    { key: 'gallery', label: { fr: 'Galerie', en: 'Gallery' }, href: './gallery.html' },
     { key: 'about', label: { fr: 'À propos de l\'Hôtel', en: 'About the Hotel' }, href: './about.html' }
   ];
 
@@ -26,6 +27,10 @@
 
     if (/services\.html$/.test(path)) {
       return 'services';
+    }
+
+    if (/gallery\.html$/.test(path)) {
+      return 'gallery';
     }
 
     return 'index';
