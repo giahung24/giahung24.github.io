@@ -959,6 +959,56 @@
     })();
 
     /*------------------
+        Desktop floating calendar CTA
+    --------------------*/
+    (function initDesktopFloatingCalendarCta() {
+        var desktopCta = document.getElementById('desktop-floating-calendar');
+
+        if (!desktopCta) {
+            return;
+        }
+
+        var desktopMediaQuery = window.matchMedia('(min-width: 992px)');
+        var toggleDesktopCta = function () {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+
+            if (desktopMediaQuery.matches && scrollTop > 140) {
+                desktopCta.classList.add('is-visible');
+            } else {
+                desktopCta.classList.remove('is-visible');
+            }
+        };
+
+        toggleDesktopCta();
+        window.addEventListener('scroll', toggleDesktopCta, { passive: true });
+
+        desktopCta.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            var modalTrigger =
+                document.querySelector('#show-modal') ||
+                document.querySelector('a.show-modal') ||
+                document.querySelector('.show-modal');
+
+            if (modalTrigger && typeof modalTrigger.click === 'function') {
+                modalTrigger.click();
+                return;
+            }
+
+            var fallbackUrl = desktopCta.getAttribute('data-fallback-url');
+            if (fallbackUrl) {
+                window.open(fallbackUrl, '_blank', 'noopener,noreferrer');
+            }
+        });
+
+        if (typeof desktopMediaQuery.addEventListener === 'function') {
+            desktopMediaQuery.addEventListener('change', toggleDesktopCta);
+        } else if (typeof desktopMediaQuery.addListener === 'function') {
+            desktopMediaQuery.addListener(toggleDesktopCta);
+        }
+    })();
+
+    /*------------------
         Smooth Scroll
     --------------------*/
     $('.mainmenu ul li a[href*="#"]').on('click', function (e) {

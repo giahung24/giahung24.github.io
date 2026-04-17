@@ -11,13 +11,13 @@ Voici les actions précises demandées :
    
 - [ ] 4.  Ajouter un onglet "Galerie photos" et utiliser les photos disponibles sur la page Instagram de l'hôtel.
    
-- [.] 5.  Changer l'onglet "À propos" par "À propos de l'hôtel" et y insérer le contenu texte spécifié dans le tableau en pièce jointe.
+- [x] 5.  Changer l'onglet "À propos" par "À propos de l'hôtel" et y insérer le contenu texte spécifié dans le tableau en pièce jointe.
 
 **Contenu de l'onglet Services**
 
-- [ ] 6.  Enlever les services "conciergerie" et "bibliothèque".
+- [x] 6.  Enlever les services "conciergerie" et "bibliothèque".
 
-- [ ] 7.  Rajouter les services : "jardin avec terrasse", "borne de recharge électrique", "distributeur automatique de chambre 24h/24h", et "salle de réunion".
+- [x] 7.  Rajouter les services : "jardin avec terrasse", "borne de recharge électrique", "distributeur automatique de chambre 24h/24h", et "salle de réunion".
 
 **Contenu de l'onglet Chambres**
 
@@ -30,6 +30,11 @@ Voici les actions précises demandées :
 
 
 ## Retour pour Agathe
+
+### Services
+- navette aeroport ?
+
+
 ### Barre menu 
 - Le titre "À propos de l'hôtel" me semble un peu long et crée un déséquilibre visuel par rapport aux autres (Accueil, Chambres, Services). Que pensez-vous de le remplacer par "L'Hôtel" ?
 
@@ -38,6 +43,9 @@ Voici les actions précises demandées :
 - Configuration de la Chambre TWIN : toujours 2 lits simples ? Pas de Canal+ ? 
 - Toutes les chambres sont climatisées (en général) ?
 
+### LOGO
+- c'est le vrai logo commercial de l'hotel ?
 
-### A propos de l'hotel 
-- Vous pensez que les clients vont tous lire ? 
+## Ajouter dans footer ?
+- conditions-generales-vente https://hotel-formuleclub.fr/conditions-generales-vente
+- politique-confidentialite  https://hotel-formuleclub.fr/politique-confidentialite
