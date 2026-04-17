@@ -4,9 +4,9 @@
   var GALLERY_FOLDER = '../assets/img/gallery/';
   var GALLERY_MANIFEST = GALLERY_FOLDER + 'gallery-manifest.json';
   var IMAGE_EXT_RE = /\.(jpg|jpeg|png|webp|avif|gif)$/i;
-  var FALLBACK_EXTENSIONS = ['jpg', 'jpeg', 'webp', 'png', 'avif'];
-  var MAX_INDEX_SCAN = 200;
-  var MAX_CONSECUTIVE_MISSES = 15;
+  var FALLBACK_EXTENSIONS = ['jpg', 'jpeg', 'webp', 'png'];
+  var MAX_INDEX_SCAN = 50;
+  var MAX_CONSECUTIVE_MISSES = 3;
 
   function getLocale() {
     var lang = (document.documentElement.lang || 'fr').toLowerCase();
@@ -512,10 +512,6 @@
 
     if (!files.length) {
       files = await discoverFromDirectoryListing();
-    }
-
-    if (!files.length) {
-      files = await discoverFromPatternProbe();
     }
 
     if (!files.length) {

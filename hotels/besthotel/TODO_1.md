@@ -9,7 +9,7 @@ Voici les actions précises demandées :
 
 - [x] 3.  Modifier l'ordre des onglets pour qu'il soit : Accueil, Chambres, Services.
    
-- [ ] 4.  Ajouter un onglet "Galerie photos" et utiliser les photos disponibles sur la page Instagram de l'hôtel.
+- [x] 4.  Ajouter un onglet "Galerie photos" et utiliser les photos disponibles sur la page Instagram de l'hôtel.
    
 - [x] 5.  Changer l'onglet "À propos" par "À propos de l'hôtel" et y insérer le contenu texte spécifié dans le tableau en pièce jointe.
 
