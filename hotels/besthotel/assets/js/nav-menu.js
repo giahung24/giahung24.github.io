@@ -97,7 +97,7 @@
       '        <div class="ft-about">',
       '          <div class="logo">',
       '            <a href="./index.html">',
-      '              <img src="../assets/img/footer-logo.png" alt="' + footerAlt + '" width="250" height="73" loading="lazy" decoding="async" />',
+      '              <img src="../assets/img/footer-logo.webp" alt="' + footerAlt + '" width="250" height="73" loading="lazy" decoding="async" />',
       '            </a>',
       '          </div>',
       '        </div>',
