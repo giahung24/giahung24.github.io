@@ -1,9 +1,5 @@
 # My TODO
 
-## Ajouter dans footer
-- conditions-generales-vente https://hotel-formuleclub.fr/conditions-generales-vente
-- politique-confidentialite  https://hotel-formuleclub.fr/politique-confidentialite
-
 ## UI elements 
 
 ## Double check real site domain in contact ìnfo
@@ -12,7 +8,15 @@
 - rerun SEO optim agent when having domain name
 - create email contact@besthotelbordeauxsud.fr (or edit it in code)
 
-## D-Edge booking page 
+## Pour Agathe
+
+### CGV et politique de confidentialité
+- dépot de garantie
+- Responsable de traitement
+- ...
+
+
+### D-Edge booking page 
 - Changer logo, contact info, website url
 
 

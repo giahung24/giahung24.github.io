@@ -88,6 +88,10 @@
     var isFrench = locale === 'fr';
     var contactTitle = isFrench ? 'Contactez-nous' : 'Contact Us';
     var footerAlt = isFrench ? 'Best Hotel Bordeaux Sud footer logo' : 'Best Hotel Bordeaux Sud footer logo';
+    var termsTitle = isFrench ? 'Conditions Générales de Vente' : 'Terms and Conditions of Sale';
+    var privacyTitle = isFrench ? 'Politique de Confidentialité' : 'Privacy Policy';
+    var termsLink = './cgv.html';
+    var privacyLink = isFrench ? './politique-confidentialite.html' : './privacy-policy.html';
 
     return [
       '<div class="container">',
@@ -120,6 +124,12 @@
       '            </li>',
       '          </ul>',
       '        </div>',
+      '      </div>',
+      '    </div>',
+      '    <div class="row">',
+      '      <div class="col-12" style="text-align: center; font-size: 14px; margin-top: 20px; color: var(--brand-color-light);">',
+      '        <a href="' + termsLink + '" style="color: inherit;">' + termsTitle + '</a> &bull; ',
+      '        <a href="' + privacyLink + '" style="color: inherit;">' + privacyTitle + '</a>',
       '      </div>',
       '    </div>',
       '  </div>',
