@@ -5041,7 +5041,7 @@ body.coming-soon-page {
   margin: 0 auto 20px;
   width: auto;
   max-width: 100%;
-  height: auto;
+  height: 100px;
 }
 
 .coming-soon-badge {
