@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Temporal Anomalies — 30 Facts That Break Your Sense of Time</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #0d0b08;
+    --bg2:      #131109;
+    --ink:      #e4d9c4;
+    --ink-dim:  #9a8e79;
+    --ink-faint:#453f35;
+    --gold:     #c9914a;
+    --gold-dim: #7a5a2e;
+    --sage:     #6e9080;
+    --rule:     rgba(201,145,74,0.18);
+    --serif:    'Cormorant Garamond', 'Georgia', serif;
+    --sc:       'Cormorant SC', 'Georgia', serif;
+    --body:     'EB Garamond', 'Georgia', serif;
+  }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+background: var(–bg);
+color: var(–ink);
+font-family: var(–body);
+font-size: 17px;
+line-height: 1.65;
+min-height: 100vh;
+overflow-x: hidden;
+}
+
+/* Grain overlay */
+body::before {
+content: ‘’;
+position: fixed;
+inset: 0;
+pointer-events: none;
+z-index: 999;
+opacity: 0.045;
+background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ viewBox=‘0 0 300 300’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.85’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’ opacity=‘1’/%3E%3C/svg%3E”);
+}
+
+/* ===== LAYOUT ===== */
+.container {
+max-width: 860px;
+margin: 0 auto;
+padding: 0 28px;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+text-align: center;
+padding: 80px 28px 60px;
+border-bottom: 1px solid var(–rule);
+position: relative;
+overflow: hidden;
+}
+
+.site-header::after {
+content: ‘’;
+position: absolute;
+inset: 0;
+background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(201,145,74,0.07) 0%, transparent 70%);
+pointer-events: none;
+}
+
+.header-kicker {
+font-family: var(–sc);
+font-size: 11px;
+letter-spacing: 0.45em;
+color: var(–gold);
+text-transform: uppercase;
+margin-bottom: 28px;
+opacity: 0;
+animation: riseIn 1s 0.1s cubic-bezier(0.2,0.6,0.2,1) forwards;
+}
+
+.site-title {
+font-family: var(–serif);
+font-weight: 300;
+font-size: clamp(3.2rem, 9vw, 6rem);
+line-height: 0.9;
+letter-spacing: -0.025em;
+margin-bottom: 24px;
+opacity: 0;
+animation: riseIn 1.1s 0.25s cubic-bezier(0.2,0.6,0.2,1) forwards;
+}
+
+.site-title em {
+font-style: italic;
+color: var(–gold);
+display: block;
+}
+
+.site-subtitle {
+font-size: 16px;
+color: var(–ink-dim);
+max-width: 480px;
+margin: 0 auto;
+line-height: 1.6;
+font-style: italic;
+opacity: 0;
+animation: riseIn 1.1s 0.45s cubic-bezier(0.2,0.6,0.2,1) forwards;
+}
+
+.header-ornament {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 16px;
+margin-top: 44px;
+opacity: 0;
+animation: riseIn 1s 0.65s ease forwards;
+}
+.header-ornament span { color: var(–gold-dim); font-size: 22px; }
+.header-ornament::before,
+.header-ornament::after {
+content: ‘’;
+flex: 1;
+height: 1px;
+background: linear-gradient(to right, transparent, var(–gold-dim));
+}
+.header-ornament::after { background: linear-gradient(to left, transparent, var(–gold-dim)); }
+
+/* ===== INDEX / TOC ===== */
+.toc {
+padding: 52px 28px;
+border-bottom: 1px solid var(–rule);
+background: linear-gradient(180deg, rgba(201,145,74,0.03) 0%, transparent 100%);
+}
+
+.toc-label {
+font-family: var(–sc);
+font-size: 10px;
+letter-spacing: 0.4em;
+color: var(–gold);
+text-transform: uppercase;
+margin-bottom: 24px;
+text-align: center;
+}
+
+.toc-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+gap: 4px 28px;
+}
+
+.toc-item {
+display: flex;
+align-items: baseline;
+gap: 10px;
+padding: 6px 0;
+font-size: 13.5px;
+color: var(–ink-dim);
+text-decoration: none;
+border-bottom: 1px solid var(–ink-faint);
+transition: color 0.2s, border-color 0.2s;
+cursor: pointer;
+}
+.toc-item:hover { color: var(–gold); border-color: var(–gold-dim); }
+.toc-num {
+font-family: var(–sc);
+font-size: 10px;
+color: var(–gold-dim);
+flex-shrink: 0;
+letter-spacing: 0.1em;
+}
+
+/* ===== MAIN LIST ===== */
+.entries { padding: 0 0 120px; }
+
+.entry {
+padding: 72px 28px 64px;
+border-bottom: 1px solid var(–rule);
+position: relative;
+opacity: 0;
+transform: translateY(22px);
+transition: opacity 0.9s cubic-bezier(0.2,0.6,0.2,1), transform 0.9s cubic-bezier(0.2,0.6,0.2,1);
+}
+.entry.visible { opacity: 1; transform: translateY(0); }
+
+/* Corner number */
+.entry-num {
+position: absolute;
+top: 28px;
+left: 28px;
+font-family: var(–sc);
+font-size: 10px;
+letter-spacing: 0.35em;
+color: var(–gold-dim);
+}
+
+/* Category tag */
+.entry-tag {
+position: absolute;
+top: 28px;
+right: 28px;
+font-family: var(–sc);
+font-size: 9.5px;
+letter-spacing: 0.3em;
+color: var(–ink-faint);
+text-transform: uppercase;
+}
+
+.entry-kicker {
+font-family: var(–sc);
+font-size: 10.5px;
+letter-spacing: 0.38em;
+color: var(–gold);
+text-transform: uppercase;
+margin-bottom: 14px;
+}
+
+.entry-claim {
+font-family: var(–serif);
+font-weight: 400;
+font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+line-height: 1.15;
+letter-spacing: -0.012em;
+color: var(–ink);
+margin-bottom: 8px;
+}
+
+.entry-claim em { font-style: italic; color: var(–gold); }
+
+/* ===== TIMELINE ===== */
+.timeline-wrap {
+margin: 44px 0 36px;
+position: relative;
+}
+
+.timeline-svg-wrap {
+width: 100%;
+overflow: visible;
+cursor: default;
+}
+
+/* ===== ASIDE ===== */
+.entry-aside {
+font-size: 14.5px;
+font-style: italic;
+color: var(–ink-dim);
+line-height: 1.55;
+padding-left: 18px;
+border-left: 2px solid var(–gold-dim);
+}
+
+/* ===== ORNAMENT ===== */
+.ornament {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+padding: 48px 0;
+color: var(–gold-dim);
+opacity: 0.6;
+}
+.ornament::before, .ornament::after {
+content: ‘’;
+width: 60px;
+height: 1px;
+background: currentColor;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+text-align: center;
+padding: 48px 28px;
+border-top: 1px solid var(–rule);
+font-family: var(–sc);
+font-size: 10px;
+letter-spacing: 0.35em;
+color: var(–ink-faint);
+text-transform: uppercase;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes riseIn {
+from { opacity: 0; transform: translateY(12px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== TOOLTIP ===== */
+.tooltip {
+position: fixed;
+background: #1e1b14;
+border: 1px solid var(–gold-dim);
+color: var(–ink);
+padding: 8px 13px;
+font-family: var(–body);
+font-size: 13px;
+font-style: italic;
+pointer-events: none;
+z-index: 1000;
+opacity: 0;
+transition: opacity 0.15s;
+max-width: 220px;
+line-height: 1.4;
+box-shadow: 0 4px 24px rgba(0,0,0,0.6);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+.entry-tag { display: none; }
+.toc-grid { grid-template-columns: 1fr; }
+.entry-claim { font-size: 1.4rem; }
+}
+</style>
+
+</head>
+<body>
+
+<div class="tooltip" id="tooltip"></div>
+
+<!-- HEADER -->
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-kicker">An Exhibition of Misplaced Time</div>
+    <h1 class="site-title">
+      Temporal<br><em>Anomalies</em>
+    </h1>
+    <p class="site-subtitle">
+      Thirty moments where the timeline refuses to behave — when the eras
+      you thought you knew turn out to have been sitting in entirely the wrong order.
+    </p>
+    <div class="header-ornament"><span>✦</span></div>
+  </div>
+</header>
+
+<!-- TABLE OF CONTENTS -->
+
+<nav class="toc">
+  <div class="container">
+    <div class="toc-label">Index of Entries</div>
+    <div class="toc-grid" id="toc-grid"></div>
+  </div>
+</nav>
+
+<!-- ENTRIES -->
+
+<main class="entries container" id="entries"></main>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+  <div class="container">
+    Hover the markers for detail &nbsp;·&nbsp; Sources: paleontology, astronomy, recorded history
+    <br><br>
+    Thirty facts, all verified. Your sense of time will not recover.
+  </div>
+</footer>
+
+<script>
+// ─────────────────────────────────────────────
+// DATA
+// ─────────────────────────────────────────────
+
+const entries = [
+  {
+    kicker: "The Pharaoh's Daughter",
+    claim: "Cleopatra lived closer in time to the Moon landing than to the building of the Great Pyramid of Giza.",
+    tag: "Ancient History",
+    events: [
+      { year: -2560, label: "Great Pyramid", note: "completed under Khufu, Giza" },
+      { year: -30,   label: "Cleopatra VII", note: "the last pharaoh, died 30 BCE", pivot: true },
+      { year: 1969,  label: "Apollo 11", note: "Moon landing, July 1969" },
+    ],
+    aside: "Cleopatra → Pyramids: ~2,530 years. Cleopatra → Moon landing: ~1,999 years. She was, in a real sense, closer to us than to the monuments she called ancient heritage.",
+  },
+  {
+    kicker: "The Terrible Lizard's Neighbour",
+    claim: "Tyrannosaurus rex lived closer in time to us than to Stegosaurus.",
+    tag: "Palaeontology",
+    events: [
+      { year: -150_000_000, label: "Stegosaurus", note: "Late Jurassic, ~150 million years ago" },
+      { year: -66_000_000,  label: "T. rex", note: "end-Cretaceous, ~66 million years ago", pivot: true },
+      { year: 2026,         label: "Today", note: "the present" },
+    ],
+    aside: "T. rex → Stegosaurus: ~84 million years. T. rex → us: ~66 million years. The dinosaur duo you imagine fighting in children's books were separated by more time than T. rex is from us.",
+  },
+  {
+    kicker: "Older Than the Forests",
+    claim: "Sharks have existed on Earth for longer than trees have.",
+    tag: "Natural History",
+    events: [
+      { year: -450_000_000, label: "First sharks", note: "earliest shark ancestors in fossil record", pivot: true },
+      { year: -385_000_000, label: "First trees", note: "earliest woody plants (Archaeopteris)" },
+      { year: 2026,         label: "Today", note: "the present" },
+    ],
+    aside: "Sharks predate the very first forests by approximately sixty-five million years. They were already ancient before a single leaf ever fell.",
+  },
+  {
+    kicker: "Older Than the Rings of Saturn",
+    claim: "Sharks may also be older than Saturn's famous rings.",
+    tag: "Natural History",
+    events: [
+      { year: -450_000_000, label: "First sharks", note: "earliest ancestors in fossil record", pivot: true },
+      { year: -100_000_000, label: "Saturn's rings", note: "estimated formation — Cassini mission data, 2019" },
+      { year: 2026,         label: "Today", note: "" },
+    ],
+    aside: "NASA's Cassini spacecraft data places Saturn's ring system at roughly 100–400 million years old. Sharks have been swimming for 450 million years. The shark wins.",
+  },
+  {
+    kicker: "The Wire Before the Voice",
+    claim: "The fax machine was invented and patented thirty-three years before the telephone.",
+    tag: "Technology",
+    events: [
+      { year: 1843, label: "Fax machine", note: "patented by Alexander Bain, Scotland", pivot: true },
+      { year: 1876, label: "Telephone", note: "patented by Alexander Graham Bell" },
+      { year: 1973, label: "First mobile call", note: "Motorola DynaTAC, New York" },
+    ],
+    aside: "The fax machine (1843) predates Bell's telephone (1876) by a third of a century. Everything you think of as the chronological order of communication technology is scrambled.",
+  },
+  {
+    kicker: "The Last of Their Kind",
+    claim: "Woolly mammoths were still alive when the Great Pyramid was being built.",
+    tag: "Natural History",
+    events: [
+      { year: -2560, label: "Pyramid of Giza", note: "construction begins under Khufu" },
+      { year: -2000, label: "Last mammoths", note: "die out on Wrangel Island, Arctic Russia", pivot: true },
+      { year: 2026,  label: "Today", note: "" },
+    ],
+    aside: "A small population of mammoths survived on Wrangel Island in the Arctic until approximately 4,000 years ago — long after Stonehenge was begun, and during the reign of Egyptian pharaohs.",
+  },
+  {
+    kicker: "The Ancient University",
+    claim: "Oxford University was already over three centuries old when the Aztec Empire was founded.",
+    tag: "History",
+    events: [
+      { year: 1096, label: "Oxford University", note: "earliest evidence of teaching at Oxford", pivot: true },
+      { year: 1428, label: "Aztec Empire", note: "Triple Alliance formed under Itzcoatl" },
+      { year: 1521, label: "Tenochtitlán falls", note: "conquered by Cortés" },
+    ],
+    aside: "Oxford predates the entire Aztec civilisation by 332 years. The university saw the Black Death, the Hundred Years' War, and Chaucer before the Aztecs built their first causeway.",
+  },
+  {
+    kicker: "A Friday in September",
+    claim: "The last execution by guillotine in France happened the same year Star Wars opened in cinemas.",
+    tag: "Modern History",
+    events: [
+      { year: 1977.38, label: "Star Wars", note: "released May 25, 1977" },
+      { year: 1977.70, label: "Last guillotine", note: "Hamida Djandoubi, executed Sept 10, Marseille", pivot: true },
+      { year: 1981,    label: "Capital punishment abolished", note: "France outlaws the death penalty" },
+    ],
+    aside: "Star Wars, a film set 'a long time ago in a galaxy far, far away', opened four months before France performed its final guillotine execution. The Enlightenment-era device outlasted the cinema of the future.",
+  },
+  {
+    kicker: "1889",
+    claim: "Nintendo was founded the same year the Eiffel Tower was completed — as a playing card company.",
+    tag: "Technology",
+    events: [
+      { year: 1889.24, label: "Eiffel Tower opens", note: "inaugurated March 31 for the World's Fair" },
+      { year: 1889.73, label: "Nintendo founded", note: "Fusajiro Yamauchi, playing cards, Kyoto", pivot: true },
+      { year: 1985,    label: "Super Mario Bros.", note: "Nintendo Entertainment System, Japan" },
+    ],
+    aside: "Nintendo — the company that gave the world Mario, Zelda, and Pokémon — was founded as a traditional hanafuda card manufacturer. It is older than the automobile, the airplane, and most nations' modern flags.",
+  },
+  {
+    kicker: "The Living Legend",
+    claim: "Betty White was older than sliced bread.",
+    tag: "Modern History",
+    events: [
+      { year: 1922.1, label: "Betty White born", note: "January 17, 1922, Oak Park, Illinois", pivot: true },
+      { year: 1928.5, label: "Sliced bread sold", note: "first sale, Chillicothe, Missouri, July 1928" },
+      { year: 2021.1, label: "Betty White dies", note: "December 31, 2021, aged 99" },
+    ],
+    aside: "The phrase 'the greatest thing since sliced bread' could never have applied to Betty White — she got here first, by six years.",
+  },
+  {
+    kicker: "Before Gravity Was Named",
+    claim: "Harvard University was founded before Newton published the laws of motion and gravity.",
+    tag: "Science",
+    events: [
+      { year: 1636, label: "Harvard founded", note: "Massachusetts Bay Colony, Sept 1636", pivot: true },
+      { year: 1687, label: "Newton's Principia", note: "Philosophiæ Naturalis Principia Mathematica published" },
+      { year: 1776, label: "American independence", note: "the University predates the USA by 140 years" },
+    ],
+    aside: "Harvard is older than Newton's theory of gravity. It is older than the concept of the calculus. Students graduated from Harvard decades before anyone could write down the laws governing why objects fall.",
+  },
+  {
+    kicker: "Walt Disney & the Sultan",
+    claim: "Walt Disney was born while the Ottoman Empire still existed. He grew up a subject of the same world as the last sultan.",
+    tag: "Modern History",
+    events: [
+      { year: 1901, label: "Walt Disney born", note: "December 5, 1901, Chicago", pivot: true },
+      { year: 1922, label: "Ottoman Empire ends", note: "abolished November 1, 1922" },
+      { year: 1937, label: "Snow White released", note: "Disney's first feature film" },
+    ],
+    aside: "Disney spent his first twenty-one years sharing the planet with one of history's greatest empires. He was alive when the last sultan of the 600-year Ottoman dynasty was deposed.",
+  },
+  {
+    kicker: "To the Moon, Then to Vote",
+    claim: "Switzerland did not grant women the right to vote until after the first Moon landing.",
+    tag: "Modern History",
+    events: [
+      { year: 1969, label: "Moon landing", note: "Apollo 11, July 20, 1969" },
+      { year: 1971, label: "Swiss women vote", note: "Switzerland, federal elections, October 1971", pivot: true },
+      { year: 1990, label: "Last Swiss canton", note: "Appenzell Innerrhoden — women voted in by court order" },
+    ],
+    aside: "Humans walked on the Moon in 1969. Swiss women could not vote in federal elections until 1971. The last Swiss canton did not grant cantonal voting rights to women until 1990, ordered by the Supreme Court.",
+  },
+  {
+    kicker: "Peers Across an Impossible Gulf",
+    claim: "Anne Frank and Martin Luther King Jr. were born the same year.",
+    tag: "Modern History",
+    events: [
+      { year: 1929.11, label: "Martin Luther King Jr.", note: "born January 15, 1929, Atlanta", pivot: true },
+      { year: 1929.61, label: "Anne Frank", note: "born June 12, 1929, Frankfurt", pivot: true },
+      { year: 1968,    label: "MLK assassinated", note: "April 4, 1968, Memphis" },
+    ],
+    aside: "Two of the most important voices of the 20th century on the subjects of oppression and human dignity were born within five months of each other. One died at 15; the other at 39.",
+  },
+  {
+    kicker: "A War-Time Execution",
+    claim: "The last execution at the Tower of London took place in 1941 — while the Second World War was being fought.",
+    tag: "Modern History",
+    events: [
+      { year: 1483, label: "Tower's first execution", note: "William Lord Hastings, June 1483" },
+      { year: 1941, label: "Last Tower execution", note: "Josef Jakobs, German spy, August 14, 1941", pivot: true },
+      { year: 1945, label: "WWII ends", note: "VE Day, May 8, 1945" },
+    ],
+    aside: "Josef Jakobs, a German spy who parachuted into England, was executed by firing squad at the Tower of London during WWII — 458 years after the fortress claimed its first victim.",
+  },
+  {
+    kicker: "The Cathedral That Forgot to Finish",
+    claim: "The Sagrada Família in Barcelona has been under construction for over 140 years and is only now nearing completion.",
+    tag: "Architecture",
+    events: [
+      { year: 1882, label: "Construction begins", note: "first stone laid, March 19, 1882", pivot: true },
+      { year: 1926, label: "Gaudí dies", note: "Antoni Gaudí killed by a tram; work continues" },
+      { year: 2026, label: "Near completion", note: "expected 2026–2028, 144 years after groundbreaking" },
+    ],
+    aside: "When construction began, neither the lightbulb nor the automobile had yet been invented. Gaudí himself said: 'My client is not in a hurry.'",
+  },
+  {
+    kicker: "Nintendo vs. the Wright Brothers",
+    claim: "Nintendo is older than the airplane.",
+    tag: "Technology",
+    events: [
+      { year: 1889, label: "Nintendo founded", note: "Fusajiro Yamauchi, Kyoto", pivot: true },
+      { year: 1903, label: "First flight", note: "Orville Wright, Kitty Hawk, December 17" },
+      { year: 1985, label: "NES released", note: "Nintendo Entertainment System, North America" },
+    ],
+    aside: "Nintendo predates commercial aviation by 14 years. It also predates the Model T Ford (1908), commercial radio (1920), and the first transatlantic flight (1927).",
+  },
+  {
+    kicker: "The Monster Before the Mirror",
+    claim: "Mary Shelley wrote Frankenstein before photography was invented.",
+    tag: "Science & Arts",
+    events: [
+      { year: 1818, label: "Frankenstein published", note: "Mary Shelley, aged 20, London", pivot: true },
+      { year: 1839, label: "Photography invented", note: "Daguerreotype announced, Paris, January 7" },
+      { year: 1851, label: "Mary Shelley dies", note: "aged 53, London" },
+    ],
+    aside: "Frankenstein, the founding text of science fiction, was written in a world where it was impossible to take a photograph. No image of Mary Shelley exists from the year she wrote it.",
+  },
+  {
+    kicker: "The Day of the First Flight",
+    claim: "The world's first commercial passenger airline service started the same year the First World War began.",
+    tag: "Technology",
+    events: [
+      { year: 1914.04, label: "First airline service", note: "St. Petersburg–Tampa Airboat Line, January 1, 1914", pivot: true },
+      { year: 1914.58, label: "WWI begins", note: "Austria-Hungary declares war, July 1914" },
+      { year: 1918,    label: "WWI ends", note: "Armistice, November 11, 1918" },
+    ],
+    aside: "The world's first scheduled commercial passenger airline flew 23 miles across Tampa Bay starting January 1, 1914. Seven months later, the same technology began raining bombs on Europe.",
+  },
+  {
+    kicker: "The Planet That Wasn't",
+    claim: "Pluto was classified as a planet for exactly 76 years before being demoted.",
+    tag: "Astronomy",
+    events: [
+      { year: 1930, label: "Pluto discovered", note: "Clyde Tombaugh, Lowell Observatory, February 18", pivot: true },
+      { year: 1969, label: "Moon landing", note: "Pluto still a planet" },
+      { year: 2006, label: "Pluto demoted", note: "IAU redefines 'planet'; Pluto becomes a dwarf planet" },
+    ],
+    aside: "Everyone who was in school between 1930 and 2006 learned that there are nine planets. Everyone who has been in school since then learned there are eight. Both groups are absolutely certain they are correct.",
+  },
+  {
+    kicker: "The Comedian, the Führer, the King",
+    claim: "Charlie Chaplin and Adolf Hitler were born in the same month. Chaplin outlived Elvis Presley.",
+    tag: "Modern History",
+    events: [
+      { year: 1889.28, label: "Charlie Chaplin born", note: "April 16, 1889, London", pivot: true },
+      { year: 1889.30, label: "Adolf Hitler born", note: "April 20, 1889, Braunau am Inn, Austria" },
+      { year: 1977.87, label: "Chaplin dies", note: "December 25, 1977 — four months after Elvis (Aug 1977)" },
+    ],
+    aside: "Chaplin and Hitler were born four days apart in April 1889. Chaplin made The Great Dictator (1940) satirising Hitler. And Chaplin, who was born in the Victorian era, outlived Elvis Presley.",
+  },
+  {
+    kicker: "The Last Victorian",
+    claim: "The last living person born in the 1800s died in 2017.",
+    tag: "Modern History",
+    events: [
+      { year: 1899, label: "Emma Morano born", note: "November 29, 1899, Civiasco, Italy", pivot: true },
+      { year: 1969, label: "Moon landing", note: "Emma Morano, aged 69, watches it happen" },
+      { year: 2017, label: "Emma Morano dies", note: "April 15, 2017, aged 117 — last verified person born in 1800s" },
+    ],
+    aside: "Emma Morano was born before the first car journey across a country, and died after the iPhone 7 was released. She watched two world wars, the invention of the television, and the Moon landing.",
+  },
+  {
+    kicker: "The Older Refreshment",
+    claim: "Coca-Cola is older than the Eiffel Tower.",
+    tag: "Technology",
+    events: [
+      { year: 1886, label: "Coca-Cola invented", note: "John Pemberton, Atlanta, May 8, 1886", pivot: true },
+      { year: 1889, label: "Eiffel Tower opens", note: "Paris World's Fair, March 31, 1889" },
+      { year: 1893, label: "Coca-Cola trademarked", note: "formal US trademark registration" },
+    ],
+    aside: "Coca-Cola predates the Eiffel Tower by three years, and also predates Nintendo (1889), the Statue of Liberty's dedication (1886 — same year, actually), and the first successful automobile (Benz Patent-Motorwagen, also 1886).",
+  },
+  {
+    kicker: "Darwin's Living Relic",
+    claim: "A tortoise named Harriet, reportedly kept by Charles Darwin himself, died in 2006.",
+    tag: "Natural History",
+    events: [
+      { year: 1835, label: "Harriet collected", note: "reportedly by Darwin from the Galápagos Islands", pivot: true },
+      { year: 1882, label: "Darwin dies", note: "April 19, 1882 — Harriet lives on" },
+      { year: 2006, label: "Harriet dies", note: "June 23, 2006, Australia Zoo, aged ~175" },
+    ],
+    aside: "Harriet the Galápagos tortoise outlived Darwin by 124 years. She died during the World Cup. Her provenance was always disputed — but Harriet herself never seemed bothered.",
+  },
+  {
+    kicker: "Ice and Stone",
+    claim: "Stonehenge construction began while woolly mammoths still existed.",
+    tag: "Ancient History",
+    events: [
+      { year: -3000, label: "Stonehenge begins", note: "first earthworks and ditch, ~3000 BCE", pivot: true },
+      { year: -2000, label: "Last mammoths", note: "Wrangel Island population goes extinct" },
+      { year: -1600, label: "Stonehenge complete", note: "bluestones and trilithons in final arrangement" },
+    ],
+    aside: "When people first began constructing Stonehenge, a population of woolly mammoths still lived on an Arctic island. The megaliths were being finished as the last of these animals disappeared.",
+  },
+  {
+    kicker: "The President's Grandchildren",
+    claim: "John Tyler, the 10th US President born in 1790, has grandchildren still alive today.",
+    tag: "Modern History",
+    events: [
+      { year: 1790, label: "John Tyler born", note: "March 29, 1790 — before the Bill of Rights was ratified", pivot: true },
+      { year: 1853, label: "Late fatherhood", note: "Lyon Tyler born 1853; Lyon Jr. born 1924" },
+      { year: 2026, label: "Harrison Tyler alive", note: "grandson, born 1928 — still living as of 2025" },
+    ],
+    aside: "Tyler had children very late in life; his son Lyon did the same. This created a genealogical anomaly: the grandchildren of a man born in 1790, before the French Revolution ended, are alive in the 2020s.",
+  },
+  {
+    kicker: "Apple & The Apple",
+    claim: "Isaac Newton's falling apple and the founding of the City of London's first stock exchange are separated by less time than us from Shakespeare.",
+    tag: "Science",
+    events: [
+      { year: 1564, label: "Shakespeare born", note: "April 26, 1564, Stratford-upon-Avon" },
+      { year: 1687, label: "Newton's Principia", note: "Philosophiæ Naturalis, published July 5, 1687" },
+      { year: 2026, label: "Today", note: "" },
+    ],
+    aside: "Shakespeare died in 1616. Newton published in 1687. They are separated by 71 years — closer together than either is to our present day, where Shakespeare is 462 years gone.",
+  },
+  {
+    kicker: "The Email Came First",
+    claim: "The first email was sent two years before the first handheld mobile phone call.",
+    tag: "Technology",
+    events: [
+      { year: 1971, label: "First email", note: "sent by Ray Tomlinson, ARPANET, 1971", pivot: true },
+      { year: 1973, label: "First mobile call", note: "Martin Cooper, Motorola, April 3, 1973" },
+      { year: 2007, label: "iPhone launches", note: "Steve Jobs, January 9, 2007" },
+    ],
+    aside: "Email arrived before the mobile phone did. The '@' symbol was chosen for addresses in 1971. By the time Cooper made his first wireless phone call two years later, people were already emailing each other.",
+  },
+  {
+    kicker: "The Widow's Long Memory",
+    claim: "The last widow of a US Civil War veteran died in 2020.",
+    tag: "Modern History",
+    events: [
+      { year: 1861, label: "US Civil War begins", note: "April 12, 1861, Fort Sumter" },
+      { year: 1917, label: "Helen Viola married", note: "teenager married elderly veteran James Bolin, aged ~93", pivot: true },
+      { year: 2020, label: "Helen Viola Jackson dies", note: "December 16, 2020, Marshfield, Missouri, aged 101" },
+    ],
+    aside: "Helen Viola Jackson married Civil War veteran James Bolin in 1917 — reportedly as an act of charity to provide him a pension carer — and died in 2020. The Civil War therefore had a living widow in the age of Zoom calls.",
+  },
+  {
+    kicker: "Contemporaries of the Renaissance",
+    claim: "Galileo Galilei and William Shakespeare were born in the same year.",
+    tag: "Science & Arts",
+    events: [
+      { year: 1564.13, label: "Galileo born", note: "February 15, 1564, Pisa", pivot: true },
+      { year: 1564.32, label: "Shakespeare born", note: "April 26, 1564, Stratford-upon-Avon" },
+      { year: 1642,    label: "Galileo dies", note: "January 8, 1642 — the year Isaac Newton was born" },
+    ],
+    aside: "Two men who shaped modernity — one mapping the heavens, one mapping the human soul — arrived on Earth two months apart in 1564. And Galileo died in the same year Newton was born.",
+  },
+];
+
+// ─────────────────────────────────────────────
+// UTILITIES
+// ─────────────────────────────────────────────
+
+function formatYear(y) {
+  if (y <= -1_000_000) return `${(Math.abs(y)/1_000_000).toLocaleString(undefined,{maximumFractionDigits:0})} mya`;
+  if (y < -999)        return `${Math.abs(Math.round(y)).toLocaleString()} BCE`;
+  if (y < 0)           return `${Math.abs(Math.round(y))} BCE`;
+  return String(Math.floor(y));
+}
+
+function fmtLabel(y, note) {
+  return note || formatYear(y);
+}
+
+// ─────────────────────────────────────────────
+// TIMELINE SVG BUILDER
+// ─────────────────────────────────────────────
+
+function buildTimeline(events) {
+  const H = 110; // total svg height
+  const PL = 14, PR = 14; // padding left/right %
+  const years = events.map(e => e.year);
+  const min = Math.min(...years), max = Math.max(...years);
+  const span = max - min || 1;
+  const svgNS = 'http://www.w3.org/2000/svg';
+
+  const svg = document.createElementNS(svgNS, 'svg');
+  svg.setAttribute('viewBox', `0 0 700 ${H}`);
+  svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+  svg.style.width = '100%';
+  svg.style.overflow = 'visible';
+
+  const W = 700;
+  const lineY = H / 2;
+  const usable = W * (1 - PL/100 - PR/100);
+  const offsetX = W * PL / 100;
+
+  // Main line
+  const line = document.createElementNS(svgNS, 'line');
+  line.setAttribute('x1', offsetX); line.setAttribute('x2', offsetX + usable);
+  line.setAttribute('y1', lineY);   line.setAttribute('y2', lineY);
+  line.setAttribute('stroke', 'rgba(201,145,74,0.25)'); line.setAttribute('stroke-width', '1');
+  svg.appendChild(line);
+
+  // End diamonds
+  [offsetX, offsetX + usable].forEach(x => {
+    const d = document.createElementNS(svgNS, 'rect');
+    d.setAttribute('x', x - 4); d.setAttribute('y', lineY - 4);
+    d.setAttribute('width', '8'); d.setAttribute('height', '8');
+    d.setAttribute('transform', `rotate(45,${x},${lineY})`);
+    d.setAttribute('fill', 'none'); d.setAttribute('stroke', 'rgba(201,145,74,0.35)');
+    d.setAttribute('stroke-width', '1');
+    svg.appendChild(d);
+  });
+
+  events.forEach((ev, i) => {
+    const pct = span === 0 ? 0.5 : (ev.year - min) / span;
+    const x = offsetX + pct * usable;
+    const above = i % 2 === 0;
+    const isPivot = !!ev.pivot;
+    const dotColor = isPivot ? '#c9914a' : '#e4d9c4';
+    const dotR = isPivot ? 6 : 4.5;
+    const labelY = above ? lineY - 18 : lineY + 18;
+    const dateY  = above ? lineY - 32 : lineY + 30;
+
+    // Glow for pivot
+    if (isPivot) {
+      const glow = document.createElementNS(svgNS, 'circle');
+      glow.setAttribute('cx', x); glow.setAttribute('cy', lineY);
+      glow.setAttribute('r', '14');
+      glow.setAttribute('fill', 'rgba(201,145,74,0.12)');
+      svg.appendChild(glow);
+    }
+
+    // Tick
+    const tick = document.createElementNS(svgNS, 'line');
+    tick.setAttribute('x1', x); tick.setAttribute('x2', x);
+    tick.setAttribute('y1', lineY - (above ? 10 : 0));
+    tick.setAttribute('y2', lineY + (above ? 0 : 10));
+    tick.setAttribute('stroke', isPivot ? '#c9914a' : 'rgba(228,217,196,0.35)');
+    tick.setAttribute('stroke-width', '1');
+    svg.appendChild(tick);
+
+    // Dot
+    const dot = document.createElementNS(svgNS, 'circle');
+    dot.setAttribute('cx', x); dot.setAttribute('cy', lineY);
+    dot.setAttribute('r', dotR);
+    dot.setAttribute('fill', dotColor);
+    dot.style.cursor = 'pointer';
+    dot.style.transition = 'r 0.2s';
+    dot.addEventListener('mouseenter', function(e) {
+      dot.setAttribute('r', dotR * 1.6);
+      showTooltip(e, `${ev.label} — ${fmtLabel(ev.year, ev.note)}`);
+    });
+    dot.addEventListener('mousemove', moveTooltip);
+    dot.addEventListener('mouseleave', function() {
+      dot.setAttribute('r', dotR);
+      hideTooltip();
+    });
+    svg.appendChild(dot);
+
+    // Label
+    const label = document.createElementNS(svgNS, 'text');
+    label.setAttribute('x', x); label.setAttribute('y', labelY);
+    label.setAttribute('text-anchor', 'middle');
+    label.setAttribute('font-family', "'Cormorant Garamond', serif");
+    label.setAttribute('font-size', isPivot ? '13.5' : '12.5');
+    label.setAttribute('font-style', isPivot ? 'italic' : 'normal');
+    label.setAttribute('fill', isPivot ? '#c9914a' : '#e4d9c4');
+    label.setAttribute('font-weight', isPivot ? '500' : '400');
+    label.textContent = ev.label;
+    svg.appendChild(label);
+
+    // Date below/above label
+    const date = document.createElementNS(svgNS, 'text');
+    date.setAttribute('x', x); date.setAttribute('y', dateY);
+    date.setAttribute('text-anchor', 'middle');
+    date.setAttribute('font-family', "'Cormorant SC', serif");
+    date.setAttribute('font-size', '9.5');
+    date.setAttribute('letter-spacing', '1.5');
+    date.setAttribute('fill', 'rgba(201,145,74,0.55)');
+    date.textContent = formatYear(ev.year);
+    svg.appendChild(date);
+  });
+
+  return svg;
+}
+
+// ─────────────────────────────────────────────
+// TOOLTIP
+// ─────────────────────────────────────────────
+
+const tooltip = document.getElementById('tooltip');
+
+function showTooltip(e, text) {
+  tooltip.textContent = text;
+  tooltip.style.opacity = '1';
+  moveTooltip(e);
+}
+function moveTooltip(e) {
+  tooltip.style.left = (e.clientX + 14) + 'px';
+  tooltip.style.top  = (e.clientY - 8) + 'px';
+}
+function hideTooltip() {
+  tooltip.style.opacity = '0';
+}
+
+// ─────────────────────────────────────────────
+// RENDER
+// ─────────────────────────────────────────────
+
+const tocGrid = document.getElementById('toc-grid');
+const main    = document.getElementById('entries');
+
+entries.forEach((entry, idx) => {
+  const num = String(idx + 1).padStart(2, '0');
+
+  // TOC item
+  const toc = document.createElement('a');
+  toc.className = 'toc-item';
+  toc.href = `#entry-${idx}`;
+  toc.innerHTML = `<span class="toc-num">№ ${num}</span><span>${entry.kicker}</span>`;
+  tocGrid.appendChild(toc);
+
+  // Entry
+  const article = document.createElement('article');
+  article.className = 'entry';
+  article.id = `entry-${idx}`;
+  article.innerHTML = `
+    <div class="entry-num">№ ${num}</div>
+    <div class="entry-tag">${entry.tag}</div>
+    <div class="entry-kicker">${entry.kicker}</div>
+    <h2 class="entry-claim">${entry.claim}</h2>
+    <div class="timeline-wrap" id="tl-${idx}"></div>
+    <p class="entry-aside">${entry.aside}</p>
+  `;
+  main.appendChild(article);
+
+  // Optional ornament every 5
+  if ((idx + 1) % 5 === 0 && idx !== entries.length - 1) {
+    const orn = document.createElement('div');
+    orn.className = 'ornament';
+    orn.innerHTML = `✦`;
+    main.appendChild(orn);
+  }
+
+  // Insert timeline SVG
+  requestAnimationFrame(() => {
+    const wrap = document.getElementById(`tl-${idx}`);
+    if (wrap) wrap.appendChild(buildTimeline(entry.events));
+  });
+});
+
+// ─────────────────────────────────────────────
+// SCROLL REVEAL
+// ─────────────────────────────────────────────
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      en.target.classList.add('visible');
+      observer.unobserve(en.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.entry').forEach(el => observer.observe(el));
+
+// Smooth TOC scroll
+document.querySelectorAll('.toc-item').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+</body>
+</html>
