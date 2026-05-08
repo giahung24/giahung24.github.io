@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashcam Viewer</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="" />
+  <script type="module" crossorigin src="./assets/index-7JsU4-KP.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Bzk6k9vS.css">
+</head>
+<body>
+  <div id="app">
+    <div id="drop-zone" class="drop-zone">
+      <p>Drop a dashcam .MP4 here</p>
+    </div>
+    <div id="viewer" class="viewer hidden">
+      <div id="video-container" class="video-container">
+        <div id="status" class="status hidden"></div>
+      </div>
+      <div id="map-container" class="map-container">
+        <div id="map-empty" class="map-empty">Loading map…</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
